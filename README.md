@@ -6,9 +6,13 @@ This browser based web application to ...
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
+<<<<<<< HEAD
 
 * Vincent
 
+=======
+* Heya, I am Mansib Talukder. Ready to start working on my first project!
+>>>>>>> 666e19b9f8251c4fbef3bf6c860d6eaa7d12c725
 * I'm Ben. I suppose this is the beginning.
 
 * ...
