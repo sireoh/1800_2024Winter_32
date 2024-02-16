@@ -1,0 +1,56 @@
+[33mcommit 59b3944dc12bddb6ca44f5f3584ee9b0efdc8d77[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: MansibTR <nabil99002@gmail.com>
+Date:   Thu Jan 25 10:28:47 2024 -0800
+
+    something
+
+[33mcommit 126caeed17b17b39273252bee043f7c5fe97bfec[m
+Author: Vincent Fung <vfung26@my.bcit.ca>
+Date:   Thu Jan 25 10:26:59 2024 -0800
+
+     .
+
+[33mcommit 7663fbc60e07888f6f69a3c964bb80e2fa4df65d[m
+Merge: 5bc1794 666e19b
+Author: Vincent Fung <vfung26@my.bcit.ca>
+Date:   Thu Jan 25 10:24:30 2024 -0800
+
+     .
+
+[33mcommit 5bc17942863886878584a44bb72226b1f0437ebb[m
+Merge: cadfd0d b0d4dae
+Author: Vincent Fung <vfung26@my.bcit.ca>
+Date:   Thu Jan 25 10:23:31 2024 -0800
+
+    add Vincent to README.md
+
+[33mcommit 666e19b9f8251c4fbef3bf6c860d6eaa7d12c725[m
+Merge: 4760559 b0d4dae
+Author: MansibTR <nabil99002@gmail.com>
+Date:   Thu Jan 25 10:22:17 2024 -0800
+
+    Conflict on README resolved by Mansib
+
+[33mcommit cadfd0dbe359e085c3190fb1fc7fde21b03af3fc[m
+Author: Vincent Fung <vfung26@my.bcit.ca>
+Date:   Thu Jan 25 10:21:22 2024 -0800
+
+    added Vincent to README.md
+
+[33mcommit 4760559fc17b7860df7b1950d1e8cf85fb1cde91[m
+Author: MansibTR <nabil99002@gmail.com>
+Date:   Thu Jan 25 10:17:41 2024 -0800
+
+    Add one line intro  to README file for Mansib
+
+[33mcommit b0d4dae52ff16dc057bf064cc6b37075451c2e00[m
+Author: Ben Henry <bhenry18@my.bcit.ca>
+Date:   Thu Jan 25 10:17:23 2024 -0800
+
+    Updating the readme with my name
+
+[33mcommit d9cd4e3b8a2db84fbf520da26ed9abc4bcda9f65[m
+Author: Vincent F <64703515+sireoh@users.noreply.github.com>
+Date:   Thu Jan 25 10:05:49 2024 -0800
+
+    Initial commit
