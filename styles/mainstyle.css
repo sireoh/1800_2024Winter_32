@@ -1,0 +1,118 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+* img{
+    width:100%;
+    height:auto;
+}
+.container {
+    height:100vh;
+    width: 100vw;
+    display:grid;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas: 
+    "header"
+    "body"
+    "footer";
+    overflow: hidden;
+}
+
+#mainheader {
+    grid-area: header;
+    width:100vw;
+    display:grid;
+    grid-template-columns: 20vw 60vw 20vw;
+    justify-items: center;
+    align-items: center;
+}
+
+#mainheader #cog {
+    grid-column:1;
+    height: 3em;
+    width: auto;
+}
+
+#mainheader #coin {
+    grid-column: 3;
+    height: 3em;
+    width:auto;
+}
+#MoodSelector {
+    margin:0;
+    padding:0;
+    grid-area:body;
+    width: 100%;
+    height:100%;
+    display:grid;
+    grid-template-rows: 20% 30% 10% 40%;
+    align-items: center;
+
+}
+.moodarea{
+    text-align: center;
+    grid-row:1;
+    display:inline-block;
+}
+
+.moodarea img {
+
+    height:3em;
+    width:auto;
+}
+.moodarea h1 {
+
+}
+
+.moodclouds{
+    grid-row:2;
+}
+
+.moodclouds img {
+    height:8em;
+    width: auto;
+}
+.moodslider{
+    grid-row:3;
+    text-align: center;
+}
+.moodslider img {
+    height: 3em;
+    width: auto;
+    align-self: center;
+}
+.mascot {
+    margin-top: 4em;
+    grid-area:4;
+}
+
+.mascot img {
+    height: 23em;
+}
+
+
+.lowernav {
+    grid-area:footer;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+}
+
+.lowernav ul {
+    display: table;
+    width:100vw;
+}
+
+.lowernav ul li {
+    font-weight: bold;
+    display: table-cell;
+    text-align: center;
+    border-style: solid;
+    width: 33vw;
+    color: #333;
+    text-decoration: none;
+}
+
+.lowernav ul li img{
+    height:5em;  
+}
