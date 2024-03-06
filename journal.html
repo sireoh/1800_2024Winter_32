@@ -16,7 +16,14 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script> -->
     <!-- Other libraries go here -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/mainstyle.css">
 
@@ -32,23 +39,13 @@
         <div id="mainheader">
             <a href="main.html">&#60; BACK BUTTON</a>
             <img id="coin" src="./images/coinicon.svg" alt="coinicon">
-            
         </div>
         <div id="MoodSelector">
-            <div class="moodarea">
-                <img src="./images/smile1.svg" alt="Smiley">
-                <h1>JOURNAL</h1>
-            </div>
-            <div class="moodclouds">
-                <img src="./images/cloudplaceholder.svg" alt="cloudplaceholder">
-            </div>
-            <div class="moodslider">
-                <input type="range" id="mood" name="Mood" min="1" max="5" />
-            </div>
-            <div class="mascot">
-                <a href="main.html"><img src="/images/mascotplaceholder.svg" alt="mascotplaceholder"></a>
-            </div>
+            <h1 id="j1">Journal Entry:</h1>
+            <textarea class="textarea" placeholder="Enter a message..."></textarea>
+            <input id="submit" type="submit" value="Submit"/>
         </div>
+        
         <footer class="lowernav">
             <ul>
                 <li><a href="themes.html"><img src="/images/trophybutton.svg" alt="trophybutton"></a></li>
@@ -63,7 +60,8 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/firebaseAPI_BBY32.js"></script>
 
 </body>
 
