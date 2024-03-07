@@ -23,9 +23,10 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    
+    <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
+
     <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./styles/mainstyle.css">
+    <link rel="stylesheet" href="./styles/mainstyle2.css">
     <link rel="stylesheet" href="./styles/graphstyle.css">
 
 </head>
@@ -38,20 +39,28 @@
     <!-- Stuff for body goes here -->
     <div class="container">
         <div id="mainheader">
-          <a href="main.html">&#60; BACK BUTTON</a>
+          <a href="main.html"><i class="fa-solid fa-arrow-left" id="backbutton"></i></a>
             <img id="coin" src="./images/coinicon.svg" alt="coinicon">
-            
         </div>
-        <div id="MoodSelector">
-            <div class="moodarea">
-                <img src="./images/smile1.svg" alt="Smiley">
-                <h1 class="text-uppercase">GRAPHS</h1>
+        <div id="content">
+            <div class="grapharea">
+                <h1>MY MOODS</h1>
+                <div id="graphtoggle">
+                    <a href="#"><i class="fa-regular fa-calendar"></i></a>
+                    <a href="#"><i class="fa-regular fa-calendar"></i></a>
+                    <a href="#"><i class="fa-regular fa-calendar"></i></a>
+                </div>
+            </div>
+            <div id="bottomgraph">
+                <i class="fa-solid fa-chart-line" ></i>
+            </div>
+            <div id="bottomicons">
+                <a href="#"><i class="fa-solid fa-dumbbell"></i></a>
+                <a href="#"><i class="fa-solid fa-utensils"></i></a>
+                <a href="#"><i class="fa-solid fa-bed"></i></a>
+                <a href="#"><i class="fa-solid fa-cloud-sun-rain"></i></a>
             </div>
             
-            
-            <div class="mascot">
-              <a href="main.html"><img src="/images/mascotplaceholder.svg" alt="mascotplaceholder"></a>
-            </div>
         </div>
         <footer class="lowernav">
             <ul>
