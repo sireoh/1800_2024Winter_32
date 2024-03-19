@@ -3,16 +3,15 @@
 // (navbar, footer, and other things) into html doc. 
 //---------------------------------------------------
 function loadSkeleton() {
-
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {                   //if the pointer to "user" object is not null, then someone is logged in
-            // User is signed in.
-            // Do something for the user here.
-            console.log($('#footerPlaceholder').load('./navbar/nav_after_login/.html'));
-        } else {
-            // No user is signed in.
-            console.log($('#footerPlaceholder').load('./navbar/nav_before_login.html'));
-        }
-    });
+    document.getElementById("footerPlaceholder").innerHTML =
+    `
+    <footer class="lowernav">
+        <ul>
+            <li><a href="themes.html"><img src="/images/trophybutton.svg" alt="trophybutton"></a></li>
+            <li><a href="journal.html"><img src="/images/diarybutton.svg" alt="diarybutton"></a></li>
+            <li><a href="graphs.html"><img src="/images/graphbutton.svg" alt="graphbutton"></a></li>
+        </ul>
+    </footer>
+    `;
 }
 loadSkeleton(); //invoke the function
