@@ -43,3 +43,7 @@ body{
     border-color: #6bb36b;
 }
 
+main {
+    display: grid;
+    justify-items: center;
+}
