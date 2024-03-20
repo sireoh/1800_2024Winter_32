@@ -3,7 +3,7 @@
 
 <head>
     <title>Mindful Minute</title>
-    <meta name="comp1800 template" content="My 1800 App">
+    <meta name="mindful minute" content="A Mindfulness App">
 
     <!------------------------>
     <!-- Required meta tags -->
@@ -28,44 +28,29 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
     
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
-    <link rel="stylesheet" href="./styles/mainstyle.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/navfooter.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 </head>
 
 <body>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
+    <header id="navPlaceholder"></header>
+
     <!-- the body of your page goes here -->
     <div class="container">
-        <div id="mainheader">
-            <img id="cog" src="./images/cogicon.svg" alt="cogicon">
-            <img id="coin" src="./images/coinicon.svg" alt="coinicon">
-            
-        </div>
-        <div id="MoodSelector">
-            <div class="moodarea">
-                <img src="./images/smile1.svg" alt="Smiley">
-                <h1>Happiness</h1>
-            </div>
-            <div class="moodclouds">
-                <img src="./images/cloudplaceholder.svg" alt="cloudplaceholder">
-            </div>
-            <div class="moodslider">
-                <input type="range" id="mood" name="Mood" min="1" max="5" />
-            </div>
-            <div class="mascot">
-                <a href="main.html"><img src="/images/mascotplaceholder.svg" alt="mascotplaceholder"></a>
-            </div>
-        </div>
-        <!-- our own footer goes here-->
-        <footer id="footerPlaceholder" class="lowernav"></footer>
+        <!-- stuff goes here -->
     </div>
+
+    <!-- our own footer goes here-->
+    <footer id="footerPlaceholder"></footer>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->

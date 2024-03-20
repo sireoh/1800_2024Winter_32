@@ -1,49 +1,15 @@
-body{
-    background-color: #ffffe6;
-}
+/*
+* please put only universal style here
+* we'd need other styling for each page
+* like main.css, journal.css etc.
+* this is just for general styling
+*/
 
-.footertext{
-    background-color: #c6f5c6;
-}
-
-.navbar{
-    background: #c6f5c6;
-}
-
-.navbar-brand{
-    font-family: "Leckerli One", sans-serif;
-    color: green;
-}
-
-.navbar-toggler{
-    border-color: #6bb36b;
-}
-
-.btn-outline-success{
-    color: white;
-}
-
-.btn{
-    background-color: #6bb36b;
-    border-color: #6bb36b;
-}
-
-.btn:hover{
-    background-color: darkgreen;
-    border-color: darkgreen;
-}
-
-.btn-info{
-    background: #c6f5c6;
-    border-color: #c6f5c6;
-}
-
-.btn-info:hover{
-    background-color: #6bb36b;
-    border-color: #6bb36b;
-}
-
-main {
+.container {
     display: grid;
-    justify-items: center;
+    height: 85vh;
+    width: 100vw;
+    background-color: lightblue;
+    justify-content: center;
+    align-content: center;
 }

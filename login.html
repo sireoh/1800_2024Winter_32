@@ -3,7 +3,7 @@
 
 <head>
     <title>Mindful Minute</title>
-    <meta name="comp1800 template" content="My 1800 App">
+    <meta name="mindful minute" content="A Mindfulness App">
 
     <!------------------------>
     <!-- Required meta tags -->
@@ -21,7 +21,6 @@
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
-    <!-- Other libraries go here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -29,36 +28,41 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Kaushan+Script&family=Leckerli+One&family=Pacifico&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
-
-    <!-- Link to styles of your own -->
+    
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-------------------------------------------->
+    <link rel="stylesheet" href="./styles/navfooter.css">
     <link rel="stylesheet" href="./styles/style.css">
-
+    <link rel="stylesheet" href="./styles/login.css">
+    <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 </head>
 
 <body>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
-    <!-- Stuff for body goes here -->
+    <!-- the body of your page goes here -->
+    <div class="container">
+        <!-- stuff goes here -->
+        <main>
+            <img class="mb-4" src="./data/img/mood-icon.png" alt="Mood-Icon">
+            <h2>Welcome To</h2>
+            <h1>Mindful Minute</h1>
+        
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
+        </main>
+    </div>
 
-    <main>
-        <img class="mb-4" src="images/mood-icon.png" alt="Mood-Icon">
-        <h2>Welcome To</h2>
-        <h1>Mindful Minute</h1>
-    
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
-    </main>
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
     <script src="./scripts/script.js"></script>
     <script src="./scripts/firebaseAPI_BBY32.js"></script>
+    <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/authentication.js"></script>
-</body>
 
+</body>
 </html>

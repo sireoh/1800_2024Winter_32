@@ -3,15 +3,17 @@
 // (navbar, footer, and other things) into html doc. 
 //---------------------------------------------------
 function loadSkeleton() {
+    document.getElementById("navPlaceholder").innerHTML =
+    `
+    <a href="main.html"><i class="fa-solid fa-circle-arrow-left"></i></a>
+    <a href="#">Mindful Minute</a>
+    <a href="#"><i class="fa-solid fa-coins"></i></a>
+    `;
     document.getElementById("footerPlaceholder").innerHTML =
     `
-    <footer class="lowernav">
-        <ul>
-            <li><a href="themes.html"><img src="/images/trophybutton.svg" alt="trophybutton"></a></li>
-            <li><a href="journal.html"><img src="/images/diarybutton.svg" alt="diarybutton"></a></li>
-            <li><a href="graphs.html"><img src="/images/graphbutton.svg" alt="graphbutton"></a></li>
-        </ul>
-    </footer>
+    <a href="themes.html"><i class="fa-solid fa-gifts"></i></a>
+    <a href="journal.html"><i class="fa-solid fa-book"></i></a>
+    <a href="graphs.html"><i class="fa-solid fa-chart-column"></i></a>
     `;
 }
 loadSkeleton(); //invoke the function

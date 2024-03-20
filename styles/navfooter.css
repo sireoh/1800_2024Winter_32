@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 4em auto 4em;
+    width: 100%;
+    justify-items: center;
+    background-color: pink;
+    padding: 1em 0 1em;
+}
+
+a {
+    text-decoration: none;
+    color: green;
+    font-size: 2em;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    background-color: yellowgreen;
+    padding: 1em 0 1em;
+}

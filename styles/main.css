@@ -1,0 +1,62 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.container {
+    display: grid;
+    height: 85vh;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.moodarea {
+    display: grid;
+    grid-template-rows: 7vh 10vh 15vh 10vh 43.1vh;
+    width: 100%;
+    grid-template-areas:
+    'smiley'
+    'title'
+    'cloud'
+    'slider'
+    'mascot';
+}
+
+#smiley {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-area: smiley;
+}
+
+#title {
+    display: grid;
+    justify-content: center;
+    grid-area: title;
+}
+
+.moodclouds {
+    display: grid;
+    align-content: center;
+    margin-left: 0.5em;
+    font-size: 2.5em;
+    grid-area: cloud;
+}
+
+.moodslider {
+    display: grid;
+    grid-area: slider;
+}
+
+#mascot {
+    display: grid;
+    grid-area: mascot;
+    justify-items: center;
+    align-items: end;
+}
+
+#mascot img {
+    width: 100%;
+    height: auto;
+    overflow-y: hidden;
+}
