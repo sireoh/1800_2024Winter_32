@@ -28,7 +28,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    
+
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
@@ -48,9 +48,14 @@
     <div class="container">
         <div class="moodarea">
             <div id="smiley"><i class="fa-regular fa-face-smile"></i></div>
-            <div id="title"><h1>Happiness</h1></div>
+            <div id="title">
+                <h1>Happiness</h1>
+            </div>
             <div class="moodclouds"><i class="fa-solid fa-cloud-meatball"></i></div>
-            <div class="moodslider"><input type="range" id="mood" name="Mood" min="1" max="5" /></div>
+            <div id="sliders">
+                <div class="happySlider"><input type="range" id="happy" name="Happy" min="1" max="5" /></div>
+                <div class="energySlider"><input type="range" id="energy" name="Energy" min="1" max="5" /></div>
+            </div>
             <div id="mascot"><img src="./data/img/mascotPlaceholder.svg"></div>
         </div>
     </div>

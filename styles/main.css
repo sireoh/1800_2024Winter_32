@@ -6,13 +6,15 @@ body{
 .container {
     display: grid;
     height: 85vh;
-    width: 100%;
-    background-color: lightblue;
+    width: 100vw;
+    background-image: url(/data/img/daysky.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .moodarea {
     display: grid;
-    grid-template-rows: 7vh 10vh 15vh 10vh 43.1vh;
+    grid-template-rows: 7vh 10vh auto 10vh 43.1vh;
     width: 100%;
     grid-template-areas:
     'smiley'
@@ -43,16 +45,29 @@ body{
     grid-area: cloud;
 }
 
-.moodslider {
-    display: grid;
-    grid-area: slider;
+#sliders{
+    display:grid;
+    justify-content: center;
 }
+
+/*will use these later
+#happySlider{
+
+}
+#energySlider {
+
+}
+*/
 
 #mascot {
     display: grid;
     grid-area: mascot;
     justify-items: center;
     align-items: end;
+    background-image: url(/data/img/daywaves.svg);
+    background-repeat:repeat-x;
+    background-position: center bottom;
+    background-size: contain;
 }
 
 #mascot img {
