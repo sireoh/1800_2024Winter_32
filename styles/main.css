@@ -68,10 +68,12 @@ body{
     background-repeat:repeat-x;
     background-position: center bottom;
     background-size: contain;
+
 }
 
 #mascot img {
     width: 100%;
     height: auto;
     overflow-y: hidden;
+    pointer-events: none; /* makes the mascot click-throughable*/
 }
