@@ -17,6 +17,8 @@
     "body"
     "footer";
     overflow: hidden;
+    background-image: url(../images/daysky.svg);
+    background-repeat: no-repeat;
 }
 
 #mainheader {
@@ -48,6 +50,9 @@
     display:grid;
     grid-template-rows: 20% 30% 10% 40%;
     align-items: center;
+    background-image: url(../images/daywaves.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
 
 }
 .moodarea{
