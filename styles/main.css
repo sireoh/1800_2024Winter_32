@@ -39,8 +39,7 @@ body{
 
 .moodclouds {
     display: grid;
-    align-content: center;
-    margin-left: 0.5em;
+    align-items: center;
     font-size: 2.5em;
     grid-area: cloud;
 }
