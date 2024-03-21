@@ -53,8 +53,17 @@
             </div>
             <div class="moodclouds"><i class="fa-solid fa-cloud-meatball"></i></div>
             <div id="sliders">
-                <div class="happySlider"><input type="range" id="happy" name="Happy" min="1" max="5" /></div>
-                <div class="energySlider"><input type="range" id="energy" name="Energy" min="1" max="5" /></div>
+                <!-- <div class="happySlider"><input type="range" id="happy" name="Happy" min="1" max="5" /></div> -->
+                <!-- <div class="energySlider"><input type="range" id="energy" name="Energy" min="1" max="5" /></div> -->
+                <p id="jsMoodterm"></p>
+                <form>
+                    <label for="happiness">Happiness (between 1 and 5):</label>
+                    <input type="number" id="happiness" name="Happiness" min="1" max="5">
+                </form>
+                <form>
+                    <label for="energy">Energy (between 1 and 5):</label>
+                    <input type="number" id="energy" name="Energy" min="1" max="5">
+                </form>
             </div>
             <div id="mascot"><img src="./data/img/mascotPlaceholder.svg"></div>
         </div>
@@ -69,6 +78,7 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/firebaseAPI_BBY32.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
