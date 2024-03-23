@@ -33,9 +33,7 @@
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <link rel="stylesheet" href="./styles/navfooter.css">
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-    <link rel="stylesheet" href="./styles/journal.css">
-
+    <link rel="stylesheet" href="./styles/style.css">
     <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 </head>
@@ -48,14 +46,25 @@
 
     <!-- the body of your page goes here -->
     <div class="container">
-        <h1 id="j1">Journal Entry:</h1>
-        <a href="past_journals.html">
-            <button  id="past_journals">View Past Journals</button>
-        </a>
-        <textarea class="textarea" id="description" placeholder="Enter a message..."></textarea>
-        <input id="submit" type="submit" onclick="writeJournal()" value="Submit"/>
-       
+        <h2>Your Journals:</h2>
+        <div id="details-go-here"></div>
+        <!-- Here is the container for cards with horizontal scrolling -->
+        <div class="card-container">
+            <div id="reviewCardGroup" class="row row-cols-auto">
+                <!-- Add your card templates here -->
+            </div>
+        </div>
     </div>
+    
+    <template id="reviewCardTemplate">
+        <div class="card bg-secondary">
+            <div class="card-body bg-light">
+                <p class="time">placeholder</p>
+                <br>
+                <p class="description">This card has supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+    </template>
 
     <!-- our own footer goes here-->
     <footer id="footerPlaceholder"></footer>
@@ -66,7 +75,7 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/firebaseAPI_BBY32.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/journal.js"></script>
+    <script src="./scripts/past_journals.js"></script>
 
 </body>
 

@@ -33,9 +33,7 @@
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <link rel="stylesheet" href="./styles/navfooter.css">
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-    <link rel="stylesheet" href="./styles/journal.css">
-
+    <link rel="stylesheet" href="./styles/style.css">
     <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 </head>
@@ -48,14 +46,14 @@
 
     <!-- the body of your page goes here -->
     <div class="container">
-        <h1 id="j1">Journal Entry:</h1>
-        <a href="past_journals.html">
-            <button  id="past_journals">View Past Journals</button>
-        </a>
-        <textarea class="textarea" id="description" placeholder="Enter a message..."></textarea>
-        <input id="submit" type="submit" onclick="writeJournal()" value="Submit"/>
-       
-    </div>
+        <div class="card-header">
+          Jorunal entry received successfully!
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Thanks for writing your journal!</h5>
+          <a href="main.html" class="btn btn-primary">Go to Home Page</a>
+        </div>
+</div>
 
     <!-- our own footer goes here-->
     <footer id="footerPlaceholder"></footer>
@@ -66,7 +64,6 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/firebaseAPI_BBY32.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/journal.js"></script>
 
 </body>
 

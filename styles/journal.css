@@ -1,9 +1,37 @@
+.container {
+  height:85vh;
+  width: 100vw;
+  display:grid;
+  background-color: lightblue;
+  grid-template-rows: 10vh 60vh 10vh;
+  grid-template-areas: 
+  "header header1"
+  "body body"
+  "footer footer";
+  overflow: hidden;
+  background-image: url(../images/daysky.svg);
+  background-repeat: no-repeat;
+}
+
 #j1{
+  grid-area: header;
   margin-left: 2%;;
+}
+
+
+#past_journals{
+  grid-area: header1;
+  margin: 0 auto;
+  margin-left: 10%;
+  margin-top: 12%;
+  height: 30%;
+  width: 80%;
+  border: 1px solid;
 }
 
 .textarea {
     background-color: #dddddd;
+    grid-area: body;
     color: #666666;
     padding: 1em;
     border-radius: 10px;
@@ -14,13 +42,14 @@
     line-height: 1.4;
     margin-left: 1%;
     width: 90%;
-    height: 100%;
   }
 
   #submit {
+    grid-area: footer;
     margin: 0 auto;
     margin-top: 20px;
     height: 50%;
-    width: 20%;
+    width: 80%;
     border: 1px solid;
   }
+
