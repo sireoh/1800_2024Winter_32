@@ -21,16 +21,23 @@
 // };
 
 // export default App;
+var date = new Date()
+
+if (date.getHours()) {
+    
+}
 
 
-function getTerm() {
+
+//choose which class/id will be clicked to query the database for the term.
+document.querySelector(".moodclouds").addEventListener("click", function getTerm() {
     const hapInput = document.getElementById("happiness");
     const hapValue = "hap" + hapInput.value;
     const eneInput = document.getElementById("energy");
     const eneValue = "ene" + eneInput.value;
-    db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("DC3u3Gl95EGvRg8Dlno9").get()
+    db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("term1").get("term")
         .then( doc => {
             moodterm = doc.data().term;
             document.getElementById("jsMoodterm").innerHTML = moodterm;
         } );
-}
+});
