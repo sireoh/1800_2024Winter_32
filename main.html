@@ -53,17 +53,53 @@
             </div>
             <div class="moodclouds"><i class="fa-solid fa-cloud-meatball"></i></div>
             <div id="sliders">
-                <!-- <div class="happySlider"><input type="range" id="happy" name="Happy" min="1" max="5" /></div> -->
-                <!-- <div class="energySlider"><input type="range" id="energy" name="Energy" min="1" max="5" /></div> -->
                 <p id="jsMoodterm"></p>
-                <form>
-                    <label for="happiness">Happiness (between 1 and 5):</label>
-                    <input type="number" id="happiness" name="Happiness" min="1" max="5">
-                </form>
-                <form>
-                    <label for="energy">Energy (between 1 and 5):</label>
-                    <input type="number" id="energy" name="Energy" min="1" max="5">
-                </form>
+                <div id="happyButtons">
+                    <!-- <label for="happyButtons">Happiness (between 1 and 5):</label> -->
+                    <div class="buttonGroup">
+                        <input type="radio" id="hap1" name="happiness" value="hap1">
+                        <label for="hap1">1</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <input type="radio" id="hap2" name="happiness" value="hap2">
+                        <label for="hap2">2</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <input type="radio" id="hap3" name="happiness" value="hap3" checked="checked">
+                        <label for="hap3">3</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <input type="radio" id="hap4" name="happiness" value="hap4">
+                        <label for="hap4">4</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <input type="radio" id="hap5" name="happiness" value="hap5">
+                        <label for="hap5">5</label>
+                    </div>
+                </div>
+                <div id="energyButtons">
+                    <!-- <label for="energyButtons">Energy (between 1 and 5):</label> -->
+                    <div class="buttonGroup">
+                        <input type="radio" id="ene1" name="energy" value="ene1">
+                        <label for="hap1">1</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <input type="radio" id="ene2" name="energy" value="ene2">
+                        <label for="hap2">2</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <input type="radio" id="ene3" name="energy" value="ene3" checked="checked">
+                        <label for="hap3">3</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <input type="radio" id="ene4" name="energy" value="ene4">
+                        <label for="hap4">4</label>
+                    </div>
+                    <div class="buttonGroup">
+                        <input type="radio" id="ene5" name="energy" value="ene5">
+                        <label for="hap5">5</label>
+                    </div>
+                </div>
             </div>
             <div id="mascot"><img src="./data/img/mascotPlaceholder.svg"></div>
         </div>
