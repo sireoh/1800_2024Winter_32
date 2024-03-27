@@ -1,0 +1,6 @@
+.buttonGroup{
+    display: grid;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 10px;
+}

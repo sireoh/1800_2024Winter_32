@@ -16,7 +16,7 @@ function displayThemeMockData(collection) {
             console.error("Error getting documents: ", error);
         });
 }
-displayThemeMockData("themes");
+//displayThemeMockData("themes");
 
 // function addRewardPoints(currentPoints, addPoints) {
 //     let currentPoints = 100;
@@ -26,8 +26,8 @@ displayThemeMockData("themes");
 //     console.log(newRewardsPoints);
 // }
 
-const startingPoints = 0;
 
+var startingPoints = 0;
 function initPoints() {
     let n = startingPoints;
     document.getElementById("rewardPoints").innerHTML = "$" + n;
@@ -35,20 +35,24 @@ function initPoints() {
 
 
 function getPoints() {
+    const startingPoints = 0;
     return startingPoints;
 }
 
-function addRewardPoints(amt) {
-    // let currentPoints = amt;
-    // let addPoints = 10;
-    // let newAmt = currentPoints + addPoints;
-    startingPoints += amt;
-    document.getElementById("rewardPoints").innerHTML = "$" + getPoints();
+function addRewardPoints() {
+    let currentPoints = amt;
+    let addPoints = 10;
+    let newAmt = currentPoints + addPoints;
+    // startingPoints += amt;
+    document.getElementById("rewardPoints").innerHTML = "$" + startingPoints;
 }
 
 function removeRewardPoints(collection){
-
+    
 }
+document.querySelector("#hat1").addEventListener("click", function(removeRewardPoints) {
+    
+})
 
 
 // function writeThemesData() {
