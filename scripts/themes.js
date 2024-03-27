@@ -8,23 +8,7 @@ function displayThemeMockData(collection) {
                 Hat 2: ${doc.data().hat2}<br/>
                 Hat 3: ${doc.data().hat3}<br/>
                 Hat 4: ${doc.data().hat4}<br/>
-                Hat 5: ${doc.data().hat5}<br/>
-                hat 6: ${doc.data().hat6}<br/>
-                hat 7: ${doc.data().hat7}<br/>
-                hat 8: ${doc.data().hat8}<br/>
-                Hat 9: ${doc.data().hat9}<br/>
-                Hat 10: ${doc.data().hat10}<br/>
-                Hat 11: ${doc.data().hat11}<br/>
-                Hat 12: ${doc.data().hat12}<br/>
-                Hat 13: ${doc.data().hat13}<br/>
-                hat 14: ${doc.data().hat14}<br/>
-                hat 15: ${doc.data().hat15}<br/>
-                hat 16: ${doc.data().hat16}<br/>
-                Hat 17: ${doc.data().hat17}<br/>
-                Hat 18: ${doc.data().hat18}<br/>
-                Hat 19: ${doc.data().hat19}<br/>
-                Hat 20: ${doc.data().hat20}<br/>
-                Hat 21: ${doc.data().hat21}
+                Hat 5: ${doc.data().hat5}
                 `;
             });
         })
@@ -33,6 +17,38 @@ function displayThemeMockData(collection) {
         });
 }
 displayThemeMockData("themes");
+
+// function addRewardPoints(currentPoints, addPoints) {
+//     let currentPoints = 100;
+//     let addPoints = 10;
+//     let totalPoints = currentPoints + addPoints;
+//     let newRewardsPoints = addRewardPoints(currentPoints, addPoints);
+//     console.log(newRewardsPoints);
+// }
+
+const startingPoints = 0;
+
+function initPoints() {
+    let n = startingPoints;
+    document.getElementById("rewardPoints").innerHTML = "$" + n;
+}
+
+
+function getPoints() {
+    return startingPoints;
+}
+
+function addRewardPoints(amt) {
+    // let currentPoints = amt;
+    // let addPoints = 10;
+    // let newAmt = currentPoints + addPoints;
+    startingPoints += amt;
+    document.getElementById("rewardPoints").innerHTML = "$" + getPoints();
+}
+
+function removeRewardPoints(collection){
+
+}
 
 
 // function writeThemesData() {
