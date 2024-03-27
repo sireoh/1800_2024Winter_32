@@ -34,17 +34,45 @@
     background-size: cover;
 }
 
-.moodarea {
+
+.container {
+    height: 100vh;
     display: grid;
-    grid-template-rows: 7vh 10vh auto 10vh 43.1vh;
+    grid-template-rows: 5em 7vh 10vh auto 10vh 43vh 5em;
     width: 100%;
     grid-template-areas:
+        'header'
         'smiley'
         'title'
         'cloud'
         'slider'
-        'mascot';
+        'mascot'
+        'footer';
 }
+
+#mainHeader {
+    display:grid;
+    grid-template-columns: 10em auto 10em;
+    align-items: center;
+    justify-items: center;
+}
+
+#settingsButton{
+    grid-column:1;
+}
+#themesButton{
+    grid-column:3;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 500
+}
+
 
 #smiley {
     display: grid;
@@ -69,6 +97,7 @@
 #sliders {
     display: grid;
     justify-content: center;
+    align-content: center;
 }
 
 .buttonGroup {
@@ -80,6 +109,18 @@
     display: block;
 }
 
+#submitbutton {
+    display: flex;
+    justify-content: center;
+}
+
+#jsMoodterm {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+
 #mascot {
     display: grid;
     grid-area: mascot;
@@ -89,7 +130,6 @@
     background-repeat: repeat-x;
     background-position: center bottom;
     /* background-size: 100vw, 400px; */
-    max-height: 400px;
     pointer-events: none;
 
 }
@@ -97,8 +137,21 @@
 #mascot img {
     width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 600px;
     overflow-y: hidden;
     pointer-events: none;
     /* makes the mascot click-throughable*/
+}
+
+#footerPlaceholder {
+    grid-area: footer;
+    height: auto;
+}
+
+#customPopup {
+    display:none;
+    /* height:100vh;
+    weight:100vw;
+    display:grid;
+    position: absolute; */
 }

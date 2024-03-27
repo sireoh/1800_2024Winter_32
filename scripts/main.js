@@ -9,7 +9,7 @@ if (date.getHours()) {
 }
 
 //choose which class/id will be clicked to query the database for the term.
-document.querySelector(".moodclouds").addEventListener("click", function getTerm() {
+document.querySelector("#submit").addEventListener("click", function getTerm() {
     const hapValue = document.querySelector('input[name=happiness]:checked').value;
     const eneValue = document.querySelector('input[name=energy]:checked').value;
     db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("term1").get("term")
@@ -17,4 +17,10 @@ document.querySelector(".moodclouds").addEventListener("click", function getTerm
             moodterm = doc.data().term;
             document.getElementById("jsMoodterm").innerHTML = moodterm;
         } );
+});
+
+//will pop up a menu and blur the rest of the screen for custom term entry
+document.querySelector("#customButton").addEventListener("click", function blurScreen() {
+    $('body').css("filter", "blur(4px)");
+    alert("hello");
 });
