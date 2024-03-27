@@ -51,6 +51,5 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 // Call the function to load past journals when the page loads
 window.onload = function() {
-    // You can remove this line if you're using the onAuthStateChanged listener
-    // loadPastJournals(firebase.auth().currentUser);
+    
 };
