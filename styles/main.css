@@ -38,16 +38,28 @@
 .container {
     height: 100vh;
     display: grid;
-    grid-template-rows: 5em 7vh 10vh auto 10vh 43vh 5em;
+    grid-template-rows: 5em auto auto 20vh min-content 5em;
     width: 100%;
     grid-template-areas:
         'header'
-        'smiley'
-        'title'
+        'clock'
         'cloud'
         'slider'
         'mascot'
         'footer';
+}
+
+#clockArea {
+    grid-area: clock;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#clock {
+    font-size:100px;
+    color:white;
+    text-shadow:2px 1px gray;
 }
 
 #mainHeader {
@@ -137,7 +149,7 @@
 #mascot img {
     width: 100%;
     height: auto;
-    max-height: 600px;
+    max-height: 250px;
     overflow-y: hidden;
     pointer-events: none;
     /* makes the mascot click-throughable*/
