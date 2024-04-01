@@ -4,10 +4,11 @@
   display:grid;
   background-color: lightblue;
   grid-template-rows: 10vh 60vh 10vh;
+  grid-template-columns: 50vw 50vw;
   grid-template-areas: 
   "header header1"
   "body body"
-  "footer footer";
+  "submit clear";
   overflow: hidden;
   background-image: url(../images/daysky.svg);
   background-repeat: no-repeat;
@@ -44,8 +45,21 @@
     width: 90%;
   }
 
+  .textarea:hover{
+    background-color: white;
+  }
+
   #submit {
-    grid-area: footer;
+    grid-area: submit;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 50%;
+    width: 80%;
+    border: 1px solid;
+  }
+
+  #clear {
+    grid-area: clear;
     margin: 0 auto;
     margin-top: 20px;
     height: 50%;

@@ -49,11 +49,16 @@
     <!-- the body of your page goes here -->
     <div class="container">
         <h1 id="j1">Journal Entry:</h1>
+        <!-- Show past entries -->
         <a href="past_journals.html">
             <button  id="past_journals">View Past Journals</button>
         </a>
+        <!-- Textarea for entering journal entry -->
         <textarea class="textarea" id="description" placeholder="Enter a message..."></textarea>
+        <!-- Submit button to submit the journal entry -->
         <input id="submit" type="submit" onclick="writeJournal()" value="Submit"/>
+        <!-- Clear button to clear the input field -->
+        <button id="clear">Clear</button>
        
     </div>
 

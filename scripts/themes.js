@@ -4,6 +4,7 @@ function displayThemeMockData(collection) {
             querySnapshot.forEach((doc) => {
                 document.getElementById("themeDrop").innerHTML =
                 `
+<<<<<<< HEAD
                 hat 1: ${doc.data().hat1}<br/>
                 hat 2: ${doc.data().hat2}<br/>
                 hat 3: ${doc.data().hat3}<br/>
@@ -25,6 +26,13 @@ function displayThemeMockData(collection) {
                 hat 19: ${doc.data().hat19}<br/>
                 hat 20: ${doc.data().hat20}<br/>
                 hat 21: ${doc.data().hat21}
+=======
+                Hat 1: ${doc.data().hat1}<br/>
+                Hat 2: ${doc.data().hat2}<br/>
+                Hat 3: ${doc.data().hat3}<br/>
+                Hat 4: ${doc.data().hat4}<br/>
+                Hat 5: ${doc.data().hat5}
+>>>>>>> 820d3554b8c003e561f3963a26d335e82501be25
                 `;
             });
         })
@@ -32,8 +40,52 @@ function displayThemeMockData(collection) {
             console.error("Error getting documents: ", error);
         });
 }
-displayThemeMockData("themes");
+//displayThemeMockData("themes");
 
+
+
+
+    var startingPoints = 100;
+    var divElement = document.getElementById("rewardPoints")
+    divElement.innerHTML = "$" + startingPoints;
+
+
+function addRewardPoints() {
+    let startingPoints = amt;
+    let addPoints = 10;
+    let newAmt = currentPoints + addPoints;
+    // startingPoints += amt;
+    //document.getElementById("rewardPoints").innerHTML = "$" + amt;
+}
+
+function removeRewardPoints(num, subtractValue){
+    return num - subtractValue;
+}
+
+document.querySelector("#hat1").addEventListener("click", function(e) {
+    var subtractedNum = removeRewardPoints(startingPoints, 1)
+    divElement.textContent = "$ " + subtractedNum;
+})
+
+document.querySelector("#hat2").addEventListener("click", function(e) {
+    var subtractedNum = removeRewardPoints(startingPoints, 4)
+    divElement.textContent = "$ " + subtractedNum;
+})
+
+document.querySelector("#hat3").addEventListener("click", function(e) {
+    var subtractedNum = removeRewardPoints(startingPoints, 57)
+    divElement.textContent = "$ " + subtractedNum;
+})
+
+document.querySelector("#hat4").addEventListener("click", function(e) {
+    var subtractedNum = removeRewardPoints(startingPoints, 34)
+    divElement.textContent = "$ " + subtractedNum;
+})
+
+document.querySelector("#hat5").addEventListener("click", function(e) {
+    var subtractedNum = removeRewardPoints(startingPoints, 25)
+    divElement.textContent = "$ " + subtractedNum;
+})
 
 // function writeThemesData() {
 //     var themeRef = db.collection("themes");
