@@ -62,13 +62,51 @@ function removeRewardPoints(num, subtractValue){
     return num - subtractValue;
 }
 
-document.querySelector("#hat1").addEventListener("click", function(e) {
-    var subtractedNum = removeRewardPoints(startingPoints, 1)
-    divElement.textContent = "$ " + subtractedNum;
+var docRef = db.collection("themes").doc("item1");
+// docRef.get().then(function(doc) {
+//     if (doc.exists){
+//         console.log(doc.data());
+//     }
+    
+// })
+
+
+
+
+// themeRef.get().then(function(doc) {
+//     if(doc.exists){
+//         console.log("Data " + themeRef.data());
+//     }
+//     else {
+//         console.log("Data no exist");
+//     }
+// })
+docRef.get().then(function(doc) {
+    if (doc.exists) {
+        var hat1Value = doc.data().hat1;
+        console.log("Current value of hat1:", hat1Value);
+
+        // Perform subtraction
+        var newValue = hat1Value - 1;
+        console.log("New value after subtraction:", newValue);
+    } else {
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+
+document.querySelector("#hat1").addEventListener("click", function() {
+    docRef.get().then(function(doc){
+        var hat1Price = doc.data().hat1;
+    
+    var subtractedNum = removeRewardPoints(startingPoints, hat1Price)
+    divElement.innerHTML = "$ " + subtractedNum;
+})
 })
 
 document.querySelector("#hat2").addEventListener("click", function(e) {
-    var subtractedNum = removeRewardPoints(startingPoints, 4)
+    var subtractedNum = removeRewardPoints(99, 4)
     divElement.textContent = "$ " + subtractedNum;
 })
 
