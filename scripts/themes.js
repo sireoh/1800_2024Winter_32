@@ -60,24 +60,7 @@ var docRef2 = db.collection("themes").doc("item2");
 var docRef3= db.collection("themes").doc("item3");
 var docRef4 = db.collection("themes").doc("item4");
 var docRef5 = db.collection("themes").doc("item5");
-// docRef.get().then(function(doc) {
-//     if (doc.exists){
-//         console.log(doc.data());
-//     }
-    
-// })
 
-
-
-
-// themeRef.get().then(function(doc) {
-//     if(doc.exists){
-//         console.log("Data " + themeRef.data());
-//     }
-//     else {
-//         console.log("Data no exist");
-//     }
-// })
 docRef.get().then(function(doc) {
     if (doc.exists) {
         var hat1Value = doc.data().hat1;
@@ -98,7 +81,8 @@ document.querySelector("#hat1").addEventListener("click", function() {
         var hat1Price = doc.data().hat1;
     
     var subtractedNum = removeRewardPoints(startingPoints, hat1Price)
-    divElement.innerHTML = "$ " + subtractedNum;
+    startingPoints = subtractedNum;
+    divElement.innerHTML = "$" + subtractedNum;
 })
 })
 
@@ -107,7 +91,8 @@ document.querySelector("#hat2").addEventListener("click", function() {
         var hat2Price = doc.data().hat2;
     
     var subtractedNum = removeRewardPoints(startingPoints, hat2Price)
-    divElement.innerHTML = "$ " + subtractedNum;
+    startingPoints = subtractedNum;
+    divElement.innerHTML = "$" + subtractedNum;
 })
 })
 
@@ -116,7 +101,8 @@ document.querySelector("#hat3").addEventListener("click", function() {
         var hat3Price = doc.data().hat3;
     
     var subtractedNum = removeRewardPoints(startingPoints, hat3Price)
-    divElement.innerHTML = "$ " + subtractedNum;
+    startingPoints = subtractedNum;
+    divElement.innerHTML = "$" + subtractedNum;
 })
 })
 
@@ -125,7 +111,8 @@ document.querySelector("#hat4").addEventListener("click", function() {
         var hat4Price = doc.data().hat4;
     
     var subtractedNum = removeRewardPoints(startingPoints, hat4Price)
-    divElement.innerHTML = "$ " + subtractedNum;
+    startingPoints = subtractedNum;
+    divElement.innerHTML = "$" + subtractedNum;
 })
 })
 
@@ -134,7 +121,8 @@ document.querySelector("#hat5").addEventListener("click", function() {
         var hat5Price = doc.data().hat5;
     
     var subtractedNum = removeRewardPoints(startingPoints, hat5Price)
-    divElement.innerHTML = "$ " + subtractedNum;
+    startingPoints = subtractedNum;
+    divElement.innerHTML = "$" + subtractedNum;
 })
 })
 
