@@ -26,13 +26,6 @@ function displayThemeMockData(collection) {
                 hat 19: ${doc.data().hat19}<br/>
                 hat 20: ${doc.data().hat20}<br/>
                 hat 21: ${doc.data().hat21}
-=======
-                Hat 1: ${doc.data().hat1}<br/>
-                Hat 2: ${doc.data().hat2}<br/>
-                Hat 3: ${doc.data().hat3}<br/>
-                Hat 4: ${doc.data().hat4}<br/>
-                Hat 5: ${doc.data().hat5}
->>>>>>> 820d3554b8c003e561f3963a26d335e82501be25
                 `;
             });
         })
@@ -63,6 +56,10 @@ function removeRewardPoints(num, subtractValue){
 }
 
 var docRef = db.collection("themes").doc("item1");
+var docRef2 = db.collection("themes").doc("item2");
+var docRef3= db.collection("themes").doc("item3");
+var docRef4 = db.collection("themes").doc("item4");
+var docRef5 = db.collection("themes").doc("item5");
 // docRef.get().then(function(doc) {
 //     if (doc.exists){
 //         console.log(doc.data());
@@ -105,24 +102,40 @@ document.querySelector("#hat1").addEventListener("click", function() {
 })
 })
 
-document.querySelector("#hat2").addEventListener("click", function(e) {
-    var subtractedNum = removeRewardPoints(99, 4)
-    divElement.textContent = "$ " + subtractedNum;
+document.querySelector("#hat2").addEventListener("click", function() {
+    docRef2.get().then(function(doc){
+        var hat2Price = doc.data().hat2;
+    
+    var subtractedNum = removeRewardPoints(startingPoints, hat2Price)
+    divElement.innerHTML = "$ " + subtractedNum;
+})
 })
 
-document.querySelector("#hat3").addEventListener("click", function(e) {
-    var subtractedNum = removeRewardPoints(startingPoints, 57)
-    divElement.textContent = "$ " + subtractedNum;
+document.querySelector("#hat3").addEventListener("click", function() {
+    docRef3.get().then(function(doc){
+        var hat3Price = doc.data().hat3;
+    
+    var subtractedNum = removeRewardPoints(startingPoints, hat3Price)
+    divElement.innerHTML = "$ " + subtractedNum;
+})
 })
 
-document.querySelector("#hat4").addEventListener("click", function(e) {
-    var subtractedNum = removeRewardPoints(startingPoints, 34)
-    divElement.textContent = "$ " + subtractedNum;
+document.querySelector("#hat4").addEventListener("click", function() {
+    docRef4.get().then(function(doc){
+        var hat4Price = doc.data().hat4;
+    
+    var subtractedNum = removeRewardPoints(startingPoints, hat4Price)
+    divElement.innerHTML = "$ " + subtractedNum;
+})
 })
 
-document.querySelector("#hat5").addEventListener("click", function(e) {
-    var subtractedNum = removeRewardPoints(startingPoints, 25)
-    divElement.textContent = "$ " + subtractedNum;
+document.querySelector("#hat5").addEventListener("click", function() {
+    docRef5.get().then(function(doc){
+        var hat5Price = doc.data().hat5;
+    
+    var subtractedNum = removeRewardPoints(startingPoints, hat5Price)
+    divElement.innerHTML = "$ " + subtractedNum;
+})
 })
 
 // function writeThemesData() {
