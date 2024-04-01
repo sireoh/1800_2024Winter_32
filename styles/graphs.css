@@ -1,0 +1,42 @@
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#buttons button {
+    text-decoration: none;
+    background-color: #fff4ed;
+    color: Tomato;
+    padding: 2vh 0 2vh;
+    border-radius: 0.5em;
+    box-shadow: 0 1vh #ddc09e;
+    font-size: 1.5em;
+    border: none;
+    margin: 5vh 0 5vh;
+}
+
+#buttons button:hover {
+	box-shadow: 0 5px #ddc09e;
+	transform: translateY(4px);
+}
+
+#icons {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+#icons i {
+    font-size: 2em;
+    background-color: #fff4ed;
+    color: Tomato;
+    padding: 2vh 2vw 2vh;
+    border-radius: 0.5em;
+    box-shadow: 0 1vh #ddc09e;
+}
+
+#icons i:hover {
+    box-shadow: 0 5px #ddc09e;
+	transform: translateY(4px);
+}

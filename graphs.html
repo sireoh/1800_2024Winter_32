@@ -34,9 +34,10 @@
     <!-------------------------------------------->
     <link rel="stylesheet" href="./styles/navfooter.css">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/graphs.css">
     <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
 </head>
 
 <body>
@@ -47,17 +48,19 @@
 
     <!-- the body of your page goes here -->
     <div class="container">
-        <button onclick="one()">CHANGE TO FIRST DATA</button><br/>
-        <button onclick="two()">CHANGE TO SECOND DATA</button><br/>
-        <div id="mockGraphs"></div>
-        <canvas id="myChart" width="400" height="400"></canvas>
+        <div id="buttons">
+            <button onclick="week()">WEEK</button>
+            <button onclick="month()">MONTH</button>
+            <button onclick="year()">YEAR</button>
+        </div>
+        <canvas id="line-chart"></canvas>
+        <div id="icons">
+            <a href="#" onclick="showAlert()"><i class="fa-solid fa-dumbbell"></i></a>
+            <a href="#" onclick="showAlert()"><i class="fa-solid fa-utensils"></i></a>
+            <a href="#" onclick="showAlert()"><i class="fa-solid fa-bed"></i></a>
+            <a href="#" onclick="showAlert()"><i class="fa-solid fa-cloud-sun-rain"></i></a>
+        </div>
     </div>
-    <!-- <div>
-        <a href="#"><i class="fa-solid fa-dumbbell"></i></a>
-        <a href="#"><i class="fa-solid fa-utensils"></i></a>
-        <a href="#"><i class="fa-solid fa-bed"></i></a>
-        <a href="#"><i class="fa-solid fa-cloud-sun-rain"></i></a>
-    </div> -->
 
     <!-- our own footer goes here-->
     <footer id="footerPlaceholder"></footer>

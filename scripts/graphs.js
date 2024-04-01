@@ -1,3 +1,316 @@
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~WEEK~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+// Function to fetch mock data from Firestore
+async function fetchWeekMockData() {
+    try {
+      const snapshot = await db.collection("graphs").doc("week").get();
+      return snapshot.data().values;
+    } catch (error) {
+      console.error("Error fetching mock data:", error);
+      return [];
+    }
+  }
+  
+  // Modified week function to fetch mock data from Firebase
+  async function week() {
+    let existingChart = Chart.getChart("line-chart");
+    if (existingChart) {
+      existingChart.destroy();
+    }
+    
+    try {
+      const mockData = await fetchWeekMockData();
+      
+      new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+          labels: ["mon", "tues", "wed", "thurs", "fri", "sat", "sun"],
+          datasets: [{
+            data: mockData, // Use fetched mock data here
+            label: "week",
+            borderColor: "#3cba9f",
+            fill: false
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: ''
+          }
+        }
+      });
+    } catch (error) {
+      console.error("Error rendering chart:", error);
+    }
+  }
+  week();
+
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~MONTH~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+async function fetchMonthMockData() {
+    try {
+      const snapshot = await db.collection("graphs").doc("month").get();
+      return snapshot.data().values;
+    } catch (error) {
+      console.error("Error fetching mock data:", error);
+      return [];
+    }
+  }
+  
+  // Modified week function to fetch mock data from Firebase
+  async function month() {
+    let existingChart = Chart.getChart("line-chart");
+    if (existingChart) {
+      existingChart.destroy();
+    }
+    
+    try {
+      const mockData = await fetchMonthMockData();
+      
+      new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+            labels: Array.from({ length: 31 }, (_, i) => i + 1),
+          datasets: [{
+            data: mockData, // Use fetched mock data here
+            label: "month",
+            borderColor: "#3cba9f",
+            fill: false
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: ''
+          }
+        }
+      });
+    } catch (error) {
+      console.error("Error rendering chart:", error);
+    }
+  }
+
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~YEAR~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+async function fetchYearMockData() {
+    try {
+      const snapshot = await db.collection("graphs").doc("month").get();
+      return snapshot.data().values;
+    } catch (error) {
+      console.error("Error fetching mock data:", error);
+      return [];
+    }
+  }
+  
+  // Modified week function to fetch mock data from Firebase
+  async function year() {
+    let existingChart = Chart.getChart("line-chart");
+    if (existingChart) {
+      existingChart.destroy();
+    }
+    
+    try {
+      const mockData = await fetchYearMockData();
+      
+      new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+            labels : [ "jan", "feb", "mar", "apr",
+                        "may", "jun", "jul", "aug", "sep",
+                        "oct", "nov", "dec" ],
+          datasets: [{
+            data: mockData, // Use fetched mock data here
+            label: "year",
+            borderColor: "#3cba9f",
+            fill: false
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: ''
+          }
+        }
+      });
+    } catch (error) {
+      console.error("Error rendering chart:", error);
+    }
+  }
+
+
+  // function month() {
+//     let existingChart = Chart.getChart("line-chart");
+//     if (existingChart) {
+//         existingChart.destroy();
+//     }
+//     new Chart(document.getElementById("line-chart"), {
+//         type : 'line',
+//         data : {
+//             labels : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+//                         11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+//                         21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ],
+//             datasets : [
+//                     {
+//                         data : [ getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6) 
+//                                 ],
+//                         label : "month",
+//                         borderColor : "#3cba9f",
+//                         fill : false
+//                     }]
+//         },
+//         options : {
+//             title : {
+//                 display : true,
+//                 text : ''
+//             }
+//         }
+//     });
+// }
+  // async function month() {
+//     let existingChart = Chart.getChart("line-chart");
+//     if (existingChart) {
+//         existingChart.destroy();
+//     }
+
+//     try {
+//         const monthData = Array.from({ length: 31 }, () => getRandomInt(6));
+
+//         new Chart(document.getElementById("line-chart"), {
+//             type: 'line',
+//             data: {
+//                 labels: Array.from({ length: 31 }, (_, i) => i + 1),
+//                 datasets: [{
+//                     data: monthData,
+//                     label: "month",
+//                     borderColor: "#3cba9f",
+//                     fill: false
+//                 }]
+//             },
+//             options: {
+//                 title: {
+//                     display: true,
+//                     text: ''
+//                 }
+//             }
+//         });
+//     } catch (error) {
+//         console.error("Error rendering chart:", error);
+//     }
+// }
+
+// function year() {
+//     let existingChart = Chart.getChart("line-chart");
+//     if (existingChart) {
+//         existingChart.destroy();
+//     }
+//     new Chart(document.getElementById("line-chart"), {
+//         type : 'line',
+//         data : {
+//             labels : [ "jan", "feb", "mar", "apr",
+//                         "may", "jun", "jul", "aug", "sep",
+//                         "oct", "nov", "dec" ],
+//             datasets : [
+//                     {
+//                         data : [ getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6) ],
+//                         label : "year",
+//                         borderColor : "#3cba9f",
+//                         fill : false
+//                     }]
+//         },
+//         options : {
+//             title : {
+//                 display : true,
+//                 text : ''
+//             }
+//         }
+//     });
+// }
+
+// function writeGraphData() {
+//     var graphRef = db.collection("graphs");
+//     graphRef.add({
+//         jan: "5",
+//         feb: "2",
+//         mar: "1",
+//         apr: "6",
+//         may: "3",
+//         june: "7",
+//         july: "6",
+//         aug: "2",
+//         sep: "9",
+//         oct: "3",
+//         nov: "1",
+//         dec: "8"
+//     });
+//     console.log("graph mock data has been added.");
+// }
+
+// function writeWeekMockGraphData() {
+//     var graphRef = db.collection("graphs").doc("week");
+//     // Specify the mock data here
+//     var mockData = [10, 15, 20, 18, 22, 17, 13]; // Example mock data
+//     graphRef.set({
+//         values: mockData
+//     }).then(function() {
+//         console.log("Week mock data has been added.");
+//     }).catch(function(error) {
+//         console.error("Error adding week mock data: ", error);
+//     });
+// }
+
+// async function writeMonthMockGraphData() {
+//     var graphRef = db.collection("graphs").doc("month");
+//     // Specify the mock data here
+//     var mockData = Array.from({ length: 31 }, () => getRandomInt(6)); // Generating mock data for the month
+//     try {
+//         await graphRef.set({
+//             values: mockData
+//         });
+//         console.log("Month mock data has been added.");
+//     } catch (error) {
+//         console.error("Error adding month mock data: ", error);
+//     }
+// }
+
+// function writeYearMockGraphData() {
+//     var graphRef = db.collection("graphs").doc("year");
+//     // Specify the mock data here
+//     var mockData = Array.from({ length: 12 }, () => getRandomInt(100)); // Generating mock data for the year
+//     graphRef.set({
+//         values: mockData
+//     }).then(function() {
+//         console.log("Year mock data has been added.");
+//     }).catch(function(error) {
+//         console.error("Error adding year mock data: ", error);
+//     });
+// }
+
+
+
+// function getRandomInt(max) {
+//     return Math.floor(Math.random() * max);
+// }
+
 // function displayGraphMockData(collection) {
 //     db.collection(collection).get()
 //         .then((querySnapshot) => {
@@ -25,101 +338,40 @@
 // }
 // displayGraphMockData("graphs");
 
-var data = [
-    {
-        value: 300,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Red"
-    },
-    {
-        value: 50,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Green"
-    },
-    {
-        value: 100,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Yellow"
-    },
-    {
-        value: 40,
-        color: "#949FB1",
-        highlight: "#A8B3C5",
-        label: "Grey"
-    },
-    {
-        value: 120,
-        color: "#4D5360",
-        highlight: "#616774",
-        label: "Dark Grey"
-    }
-
-];
-
-var data2 = [
-    {
-        value: 75,
-        color:"purple",
-        highlight: "#FF5A5E",
-        label: "Purple"
-    },
-    {
-        value: 12,
-        color: "green",
-        highlight: "#5AD3D1",
-        label: "Green"
-    },
-    {
-        value: 8,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Yellow"
-    },
-    {
-        value: 95,
-        color: "#949FB1",
-        highlight: "#A8B3C5",
-        label: "Grey"
-    },
-    {
-        value: 120,
-        color: "#4D5360",
-        highlight: "#616774",
-        label: "Dark Grey"
-    }
-
-];
-
-var ctx = document.getElementById("myChart").getContext("2d");
-
-function one() {
-    var myNewChart = new Chart(ctx).PolarArea(data);
-}
-
-function two() {
-    var myNewChart = new Chart(ctx).PolarArea(data2);
-}
-
-one();
-
-// function writeGraphData() {
-//     var graphRef = db.collection("graphs");
-//     graphRef.add({
-//         jan: "5",
-//         feb: "2",
-//         mar: "1",
-//         apr: "6",
-//         may: "3",
-//         june: "7",
-//         july: "6",
-//         aug: "2",
-//         sep: "9",
-//         oct: "3",
-//         nov: "1",
-//         dec: "8"
+// function week() {
+//     let existingChart = Chart.getChart("line-chart");
+//     if (existingChart) {
+//         existingChart.destroy();
+//     }
+//     new Chart(document.getElementById("line-chart"), {
+//         type : 'line',
+//         data : {
+//             labels : [ "mon", "tues", "wed", "thurs",
+//                             "fri", "sat", "sun" ],
+//             datasets : [
+//                     {
+//                         data : [ getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6), getRandomInt(6), getRandomInt(6),
+//                                     getRandomInt(6) ],
+//                         label : "week",
+//                         borderColor : "#3cba9f",
+//                         fill : false
+//                     }]
+//         },
+//         options : {
+//             title : {
+//                 display : true,
+//                 text : ''
+//             }
+//         }
 //     });
-//     console.log("graph mock data has been added.");
+// }
+// week();
+
+// function createData() {
+//     let str = "";
+//     for(let i = 1; i <= 31; i++) {
+//         str += `getRandomInt(6), `;
+//     }
+//     return str;
 // }
