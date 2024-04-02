@@ -64,6 +64,7 @@
         <div class="moodclouds"><i class="fa-solid fa-cloud-meatball"></i></div>
         <div id="sliders">
             <p id="jsMoodterm"></p>
+            <h3>Happiness Level</h3>
             <div id="happyButtons">
                 <!-- <label for="happyButtons">Happiness (between 1 and 5):</label> -->
                 <div class="buttonGroup">
@@ -87,9 +88,8 @@
                     <label for="hap5">5</label>
                 </div>
             </div>
-            <div id="submitbutton">
-                <button id="submit" name="submit"> Submit </button>
-            </div>
+            
+            <h3>Energy Level</h3>
             <div id="energyButtons">
                 <!-- <label for="energyButtons">Energy (between 1 and 5):</label> -->
                 <div class="buttonGroup">
@@ -113,9 +113,21 @@
                     <label for="hap5">5</label>
                 </div>
             </div>
+            <div id="submitbutton">
+                <button id="submit" name="submit"> Submit </button>
+            </div>
             <div id="customButton">
                 <button id="customButtonButton">Use Custom Term</button>
             </div>
+            <dialog id="favDialog">
+                <form method="dialog">
+                    <p>Type your custom term here:</p>
+                    <input type="text">
+
+                  <button id="confirmBtn">Submit</button>
+                </form>
+              </dialog>
+              
         </div>
         <div id="mascot"><img src="./data/img/mascotPlaceholder.svg"></div>
         <!-- </div> -->
@@ -124,10 +136,6 @@
             <a href="journal.html"><i class="fa-solid fa-book"></i></a>
             <a href="graphs.html"><i class="fa-solid fa-chart-column"></i></a>
         </footer>
-    </div>
-    <div id = customPopup>
-        <p>Type your custom term here:</p>
-        <input type="text">
     </div>
 
     <!-- our own footer goes here-->

@@ -160,10 +160,6 @@
     height: auto;
 }
 
-#customPopup {
-    display:none;
-    /* height:100vh;
-    weight:100vw;
-    display:grid;
-    position: absolute; */
-}
+dialog::backdrop {
+    backdrop-filter: blur(4px);
+  }

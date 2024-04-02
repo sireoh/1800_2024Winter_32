@@ -46,11 +46,11 @@ document.querySelector("#submit").addEventListener("click", function getTerm() {
         });
 });
 
-//will pop up a menu and blur the rest of the screen for custom term entry
-document.querySelector("#customButton").addEventListener("click", function blurScreen() {
-    $('body').css("filter", "blur(4px)");
-    alert("hello");
-});
+// //will pop up a menu and blur the rest of the screen for custom term entry
+// document.querySelector("#customButton").addEventListener("click", function blurScreen() {
+//     $('body').css("filter", "blur(4px)");
+//     alert("hello");
+// });
 
 const timeElement = document.getElementById("clock");
 
@@ -70,3 +70,9 @@ function updateTime() {
 }
 
 updateTime();
+
+const showDialogBtn = document.getElementById('customButtonButton');
+const favDialog = document.getElementById('favDialog');
+
+showDialogBtn.addEventListener('click', () => favDialog.showModal());
+
