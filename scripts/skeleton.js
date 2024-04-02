@@ -7,7 +7,8 @@ function loadSkeleton() {
     `
     <a href="main.html"><i class="fa-solid fa-circle-arrow-left"></i></a>
     <a href="#">Mindful Minute</a>
-    <span id="rewardPoints"></span>
+    <span id="currentAmtOfMoney"></span>
+    <a href="#"><i class="fa-solid fa-coins"></i></a>
     `;
     document.getElementById("footerPlaceholder").innerHTML =
     `
@@ -17,5 +18,3 @@ function loadSkeleton() {
     `;
 }
 loadSkeleton(); //invoke the function
-
-/* <a href="#"><i class="fa-solid fa-coins"></i></a> */

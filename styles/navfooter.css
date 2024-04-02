@@ -5,7 +5,7 @@ body {
 
 header {
     display: grid;
-    grid-template-columns: 4em auto 4em;
+    grid-template-columns: 4em auto 5em 2em;
     width: 100%;
     justify-items: center;
     background-color: pink;
@@ -24,4 +24,8 @@ footer {
     justify-items: center;
     background-color: yellowgreen;
     padding: 1em 0 1em;
+}
+
+header span {
+    font-size: 2em;
 }

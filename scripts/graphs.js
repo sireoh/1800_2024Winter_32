@@ -14,7 +14,6 @@ async function fetchWeekMockData() {
     }
   }
   
-  // Modified week function to fetch mock data from Firebase
   async function week() {
     let existingChart = Chart.getChart("line-chart");
     if (existingChart) {
@@ -64,7 +63,6 @@ async function fetchMonthMockData() {
     }
   }
   
-  // Modified week function to fetch mock data from Firebase
   async function month() {
     let existingChart = Chart.getChart("line-chart");
     if (existingChart) {
@@ -112,8 +110,7 @@ async function fetchYearMockData() {
       return [];
     }
   }
-  
-  // Modified week function to fetch mock data from Firebase
+
   async function year() {
     let existingChart = Chart.getChart("line-chart");
     if (existingChart) {

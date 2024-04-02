@@ -1,6 +1,36 @@
-.buttonGroup{
+/* .buttonGroup{
     display: grid;
     text-align: center;
     align-items: center;
     padding-bottom: 10px;
+} */
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#populateShop {
+    display: grid;
+    overflow-y: scroll;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px;
+}
+
+.hatTheme {
+    text-decoration: none;
+    background-color: #fff4ed;
+    color: Tomato;
+    padding: 1em 0 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 1vh #ddc09e;
+    font-size: 1.5em;
+    border: none;
+    margin: 2vh 2vw 2vh;
+    padding: 1em;
+}
+
+.hatTheme:hover {
+    box-shadow: 0 5px #ddc09e;
+	transform: translateY(4px);
 }
