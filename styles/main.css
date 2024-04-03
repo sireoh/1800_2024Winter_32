@@ -38,12 +38,12 @@
 .container {
     height: 100vh;
     display: grid;
-    grid-template-rows: 5em auto auto 20vh min-content 5em;
+    grid-template-rows: 5em 10em auto min-content 5em;
     width: 100%;
     grid-template-areas:
         'header'
         'clock'
-        'cloud'
+        /* 'cloud' */
         'slider'
         'mascot'
         'footer';
@@ -99,17 +99,18 @@
     grid-area: title;
 }
 
-.moodclouds {
+/* .moodclouds {
     display: grid;
     align-items: center;
     font-size: 2.5em;
     grid-area: cloud;
-}
+} */
 
 #sliders {
+    grid-area:slider;
     display: grid;
     justify-content: center;
-    align-content: center;
+    align-content:center;
 }
 
 .buttonGroup {
@@ -141,7 +142,6 @@
     background-image: url(/data/img/daywaves.svg);
     background-repeat: repeat-x;
     background-position: center bottom;
-    /* background-size: 100vw, 400px; */
     pointer-events: none;
 
 }
@@ -165,7 +165,6 @@
     background-image: url(/data/img/daywaves.svg);
     background-repeat: repeat-x;
     background-position: center bottom;
-    /* background-size: 100vw, 400px; */
     pointer-events: none;
 
 }
@@ -175,7 +174,7 @@
     height: auto;
     max-height: 250px;
     overflow-y: hidden;
-    /* makes the mascot click-throughable*/
+    /* makes the hat click-throughable*/
     pointer-events: none;
     position:relative;
     
