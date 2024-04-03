@@ -37,8 +37,8 @@ if (navigator.geolocation) {
 
 //choose which class/id will be clicked to query the database for the term.
 document.querySelector("#submit").addEventListener("click", function getTerm() {
-    const hapValue = document.querySelector('input[name=happiness]:checked').value;
-    const eneValue = document.querySelector('input[name=energy]:checked').value;
+    const hapValue = document.querySelector('input[name=hap-rating]:checked').value;
+    const eneValue = document.querySelector('input[name=ene-rating]:checked').value;
     db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("term1").get("term")
         .then(doc => {
             moodterm = doc.data().term;
