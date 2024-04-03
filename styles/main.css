@@ -147,12 +147,38 @@
 }
 
 #mascot img {
-    width: 100%;
+    width: auto;
     height: auto;
     max-height: 250px;
     overflow-y: hidden;
-    pointer-events: none;
     /* makes the mascot click-throughable*/
+    pointer-events: none;
+    position:relative;
+    
+}
+
+#hat {
+    display: grid;
+    grid-area: mascot;
+    justify-items: center;
+    align-items: end;
+    background-image: url(/data/img/daywaves.svg);
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    /* background-size: 100vw, 400px; */
+    pointer-events: none;
+
+}
+
+#hat img {
+    width: auto;
+    height: auto;
+    max-height: 250px;
+    overflow-y: hidden;
+    /* makes the mascot click-throughable*/
+    pointer-events: none;
+    position:relative;
+    
 }
 
 #footerPlaceholder {
