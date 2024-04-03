@@ -37,8 +37,8 @@ if (navigator.geolocation) {
 
 //choose which class/id will be clicked to query the database for the term.
 document.querySelector("#submit").addEventListener("click", function getTerm() {
-    const hapValue = document.querySelector('input[name=happiness]:checked').value;
-    const eneValue = document.querySelector('input[name=energy]:checked').value;
+    const hapValue = document.querySelector('input[name=hap-rating]:checked').value;
+    const eneValue = document.querySelector('input[name=ene-rating]:checked').value;
     db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("term1").get("term")
         .then(doc => {
             moodterm = doc.data().term;
@@ -46,11 +46,11 @@ document.querySelector("#submit").addEventListener("click", function getTerm() {
         });
 });
 
-//will pop up a menu and blur the rest of the screen for custom term entry
-document.querySelector("#customButton").addEventListener("click", function blurScreen() {
-    $('body').css("filter", "blur(4px)");
-    alert("hello");
-});
+// //will pop up a menu and blur the rest of the screen for custom term entry
+// document.querySelector("#customButton").addEventListener("click", function blurScreen() {
+//     $('body').css("filter", "blur(4px)");
+//     alert("hello");
+// });
 
 const timeElement = document.getElementById("clock");
 
@@ -70,3 +70,9 @@ function updateTime() {
 }
 
 updateTime();
+
+const showDialogBtn = document.getElementById('customButtonButton');
+const favDialog = document.getElementById('favDialog');
+
+showDialogBtn.addEventListener('click', () => favDialog.showModal());
+
