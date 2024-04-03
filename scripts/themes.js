@@ -157,13 +157,13 @@ var htmlStr = "";
 
 function genRandomHat() {
     const hats = [
-        `<i class="fa-solid fa-hat-wizard"></i><br/>`,
-        `<i class="fa-solid fa-hat-cowboy-side"></i>`,
-        `<i class="fa-solid fa-hat-cowboy"></i>`,
-        `<i class="fa-brands fa-pied-piper-hat"></i>`,
-        `<i class="fa-solid fa-helmet-safety"></i>`,
-        `<i class="fa-solid fa-graduation-cap"></i>`,
-        `<i class="fa-brands fa-redhat"></i>`
+        "fa-solid fa-hat-wizard",
+        "fa-solid fa-hat-cowboy-side",
+        "fa-solid fa-hat-cowboy",
+        "fa-brands fa-pied-piper-hat",
+        "fa-solid fa-helmet-safety",
+        "fa-solid fa-graduation-cap",
+        "fa-brands fa-redhat"
     ]
     let i = Math.floor(Math.random() * hats.length);
     return hats[i];
@@ -188,15 +188,16 @@ function Hat(hatID, hatType, price) {
 }
 
 function populateThemes() {
+    var poo = "hello";
     for(i = 1; i <= amtOfHats; i++) {
         var hat = new Hat(i, genRandomHat(), genRandomPrice());
         htmlStr += `
-        <button id="hatTheme${hat.hatID}" class="hatTheme" onClick="purchaseHat(${hat.price})">
-        ${hat.hatType}<br/>
-        Hat ${hat.hatID}<br/>
-        $${hat.price}
+        <button id="hatTheme${hat.hatID}" class="hatTheme" onClick="purchaseHat(${hat.price}, '${hat.hatType}')">
+            <i class="${hat.hatType}"></i><br/>
+            Hat ${hat.hatID}<br/>
+            $${hat.price}
         </button>
-        `
+        `;
     }
     document.getElementById("populateShop").innerHTML = htmlStr;
 }
@@ -206,9 +207,9 @@ function getCurrentAmt() {
 }
 document.getElementById("currentAmtOfMoney").innerHTML = getCurrentAmt();
 
-function purchaseHat(price) {
+function purchaseHat(price, hatType) {
     if (startingMoney >= price) {
-        alert("You have purchaed a hat for the price of: " + price);
+        alert("You have purchaed a " + hatType + " hat for the price of: " + price);
         startingMoney -= price;
         document.getElementById("currentAmtOfMoney").innerHTML = getCurrentAmt();
     } else {
