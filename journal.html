@@ -28,7 +28,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    
+
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
@@ -48,19 +48,27 @@
 
     <!-- the body of your page goes here -->
     <div class="container">
-        <h1 id="j1">Journal Entry:</h1>
+        <h1 id="j1">Write a Journal:</h1>
         <!-- Show past entries -->
         <a href="past_journals.html">
-            <button  id="past_journals">View Past Journals</button>
+            <button id="past_journals">View Past Journals</button>
         </a>
         <!-- Textarea for entering journal entry -->
         <textarea class="textarea" id="description" placeholder="Enter a message..."></textarea>
         <!-- Submit button to submit the journal entry -->
-        <input id="submit" type="submit" onclick="writeJournal()" value="Submit"/>
+        <input id="submit" type="submit" onclick="writeJournal()" value="Submit" />
         <!-- Clear button to clear the input field -->
         <button id="clear">Clear</button>
-       
+
     </div>
+
+    <div id="customAlertModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+
 
     <!-- our own footer goes here-->
     <footer id="footerPlaceholder"></footer>
