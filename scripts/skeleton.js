@@ -6,7 +6,7 @@ function loadSkeleton() {
     document.getElementById("navPlaceholder").innerHTML =
     `
     <a href="main.html"><i class="fa-solid fa-circle-arrow-left"></i></a>
-    <a href="#">Mindful Minute</a>
+    <a href="main.html">Mindful <i class="fa-solid fa-rainbow"></i> Minute</a>
     <span id="currentAmtOfMoney"></span>
     <a href="themes.html"><i class="fa-solid fa-coins"></i></a>
     `;
