@@ -503,3 +503,20 @@ input[class="super-sad-energy"]:checked + svg,
 input[class="super-sad-energy"]:focus + svg {
 	fill: rgb(239, 42, 16);
 }
+
+#submitbutton button, #customButton button{
+    text-decoration: none;
+    background-color: #fff4ed;
+    color: Tomato;
+    padding: 1vh 3vw 1vh;
+    border-radius: 0.5em;
+    box-shadow: 0 1vh #ddc09e;
+    font-size: 1.5em;
+    border: none;
+    margin: 5vh 0 5vh;
+}
+
+#submitbutton button:hover, #customButton button:hover {
+    box-shadow: 0 5px #ddc09e;
+	transform: translateY(4px);
+}
