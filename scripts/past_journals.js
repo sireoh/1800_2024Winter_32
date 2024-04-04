@@ -55,7 +55,11 @@ function initCalendar() {
     flatpickr("#calendarContainer", {
         mode: "single",
         onChange: function(selectedDates, dateStr, instance) {
-            filterJournalsByDate(selectedDates[0]);
+            if (selectedDates.length === 0) { // Check if selection is cleared
+                location.reload(); // Reload the page
+            } else {
+                filterJournalsByDate(selectedDates[0]);
+            }
         }
     });
 }
