@@ -94,11 +94,29 @@ document.querySelector("#submit").addEventListener("click", function getTerm() {
         });
 });
 
-// //will pop up a menu and blur the rest of the screen for custom term entry
-// document.querySelector("#customButton").addEventListener("click", function blurScreen() {
-//     $('body').css("filter", "blur(4px)");
-//     alert("hello");
-// });
+//will pop up a menu and blur the rest of the screen for custom term entry
+document.querySelector("#confirmBtn").addEventListener("click", function addCheckin() {
+    var checkInRef = db.collection("users").doc("yUzjMJJBe5QiHjjnDawR6NfVatW2").collection("checkIns");
+    var hapValue = document.querySelector('input[name=hap-rating]:checked').value;
+    var eneValue = document.querySelector('input[name=ene-rating]:checked').value;
+    var exeValue = document.querySelector('input[name=exercise]:checked').value;
+    var eatValue = document.querySelector('input[name=eat]:checked').value;
+    var sleepValue = document.querySelector('input[name=sleep]:checked').value;
+
+    checkInRef.add({
+        moodTerm: moodterm,
+        happyValue: hapValue,
+        energyValue: eneValue,
+        exerciseValue: exeValue,
+        eatingValue: eatValue,
+        sleepingValue: sleepValue,
+        date: firebase.firestore.FieldValue.serverTimestamp()
+        // weather: to be determined
+
+
+    })
+});
+
 
 const timeElement = document.getElementById("clock");
 
