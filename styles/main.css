@@ -130,6 +130,7 @@
     display: grid;
     justify-content: center;
     align-content:center;
+    grid-template-rows: min-content;
 
 }
 
@@ -506,14 +507,15 @@ input[class="super-sad-energy"]:focus + svg {
 
 #submitbutton button, #customButton button{
     text-decoration: none;
-    background-color: #fff4ed;
-    color: Tomato;
-    padding: 1vh 3vw 1vh;
+    background-color: rgb(7,132,181);
+    color: white;
+    /* padding: 1vh 3vw 1vh; */
     border-radius: 0.5em;
-    box-shadow: 0 1vh #ddc09e;
+    box-shadow: 0 1vh  #033F63;
     font-size: 1.5em;
     border: none;
-    margin: 5vh 0 5vh;
+    margin: 2vh 0 2vh;
+    padding: 0.5vh;
 }
 
 #submitbutton button:hover, #customButton button:hover {
