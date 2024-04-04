@@ -1,49 +1,67 @@
-// Function to submit the journal input field
+// Function to display custom alert modal
+function showAlert(message) {
+    var modal = document.getElementById("customAlertModal");
+    var modalMessage = document.getElementById("modalMessage");
+    modal.style.display = "block";
+    modalMessage.innerText = message;
+}
+
+// Function to hide custom alert modal
+function closeModal() {
+    var modal = document.getElementById("customAlertModal");
+    modal.style.display = "none";
+}
+
+// Function to confirm action using custom modal
+function showConfirmation(message, callback) {
+    showAlert(message);
+    document.getElementById("modalMessage").innerHTML += "<br><button id='confirmButton'>Yes</button><button id='cancelButton'>No</button>";
+    document.getElementById("confirmButton").addEventListener("click", function () {
+        callback(true);
+        closeModal();
+    });
+    document.getElementById("cancelButton").addEventListener("click", function () {
+        callback(false);
+        closeModal();
+    });
+}
+
+// Modify existing functions to use custom modals
 function writeJournal() {
-
     let journalEntry = document.getElementById("description").value;
-
-    // Check if the journal entry is empty
     if (journalEntry === "") {
-        // Show an alert if the text field is empty
-        alert("You cannot submit an empty journal entry.");
-        return; // Exit the function if the entry is empty
-    }
-
-    // Ask for confirmation before submitting
-    var confirmation = confirm("Are you sure you want to submit this journal entry?");
-    if (!confirmation) {
-        // If user cancels, exit the function
+        showAlert("You cannot submit an empty journal entry.");
         return;
     }
+    showConfirmation("Are you sure you want to submit this journal entry?", function (result) {
+        if (result) {
+            var user = firebase.auth().currentUser;
+            if (user) {
+                var currentUser = db.collection("users").doc(user.uid);
+                var userID = user.uid;
 
-    var user = firebase.auth().currentUser;
-    if (user) {
-        var currentUser = db.collection("users").doc(user.uid);
-        var userID = user.uid;
-
-        // Get the document for the current user.
-        db.collection("journals").add({
-            userID: userID,
-            description: journalEntry,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        }).then(() => {
-            window.location.href = "thanks.html"; // Redirect to the thanks page
-        });
-    } else {
-        console.log("No user is signed in");
-    }
+                db.collection("journals").add({
+                    userID: userID,
+                    description: journalEntry,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                }).then(() => {
+                    window.location.href = "thanks.html"; // Redirect to the thanks page
+                });
+            } else {
+                console.log("No user is signed in");
+            }
+        }
+    });
 }
 
 // Function to clear the input field with confirmation
 function clearInputField() {
     // Display a confirmation dialog
-    var confirmation = confirm("Are you sure you want to clear the input field?");
-    
-    // If the user confirms, clear the input field
-    if (confirmation) {
-        document.getElementById("description").value = ""; // Clear the textarea value
-    }
+    showConfirmation("Are you sure you want to clear the input field?", function (result) {
+        if (result) {
+            document.getElementById("description").value = ""; // Clear the textarea value
+        }
+    });
 }
 
 // Event listener for the Clear button
@@ -62,5 +80,19 @@ buttons.forEach(function(button) {
             }
         }
     });
+}); 
+// Close modal when clicking on the close button
+var closeButtons = document.querySelectorAll('.close');
+closeButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        closeModal();
+    });
 });
 
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+    var modal = document.getElementById("customAlertModal");
+    if (event.target == modal) {
+        closeModal();
+    }
+}

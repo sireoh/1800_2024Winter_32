@@ -28,14 +28,17 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    
+
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <link rel="stylesheet" href="./styles/navfooter.css">
     <link rel="stylesheet" href="./styles/past_journals.css">
     <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -48,7 +51,13 @@
     <div class="container">
         <!-- stuff goes here -->
         <h1>Your Journals:</h1>
+        <!-- Wrapper for <h1> and calendar -->
+        <div class="calendar-wrapper">
+            <!-- Calendar container -->
+            <div id="calendarContainer"></div>
+        </div>
         <div id="journalContainer"></div>
+        
     </div>
 
     <!-- our own footer goes here-->

@@ -3,9 +3,10 @@
     width: 100vw;
     display:grid;
     background-color: lightblue;
-    grid-template-rows: 7vh 70vh;
+    grid-template-rows: 7vh 5vh 65vh;
     grid-template-areas: 
     "header"
+    "calendar"
     "body";
     overflow: hidden;
     background-repeat: no-repeat;
@@ -16,7 +17,11 @@ h1 {
     margin-left: 15px;
 }
 
-
+.flatpickr-input{
+    margin-left: 15px;
+    width: 200px;
+    height: 20px;
+}
 .journal-entry {
     border: 1px solid #ccc;
     padding: 10px;

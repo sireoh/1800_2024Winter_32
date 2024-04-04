@@ -5,16 +5,16 @@ body {
 
 header {
     display: grid;
-    grid-template-columns: 4em auto 5em 2em;
+    grid-template-columns: 4em auto 1em 5em;
     width: 100%;
     justify-items: center;
-    background-color: pink;
+    background-color:rgb(7,132,181);
     padding: 1em 0 1em;
 }
 
 a {
     text-decoration: none;
-    color: green;
+    color: darkblue;
     font-size: 2em;
 }
 
@@ -22,7 +22,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    background-color: yellowgreen;
+    background-color: rgb(7,132,181);
     padding: 1em 0 1em;
 }
 

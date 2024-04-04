@@ -13,7 +13,6 @@ function formatTimestamp(timestamp) {
     return date.toLocaleString('en-US', options);
 }
 
-
 // Function to load past journals of the logged-in user
 function loadPastJournals(user) {
     if (user) {
@@ -29,6 +28,7 @@ function loadPastJournals(user) {
                     // Create a div element to display the journal entry
                     var journalDiv = document.createElement("div");
                     journalDiv.classList.add("journal-entry");
+                    journalDiv.dataset.timestamp = journalData.timestamp.toDate().toString(); // Add timestamp as data attribute
                     var formattedTimestamp = formatTimestamp(journalData.timestamp);
                     journalDiv.innerHTML =  "<p id=\"time\" +>" + formattedTimestamp + "</p>" + 
                                 "<br>" + "<p>" + journalData.description + "</p>";
@@ -44,12 +44,47 @@ function loadPastJournals(user) {
     }
 }
 
-// Listen for authentication state changes
-firebase.auth().onAuthStateChanged(function(user) {
-    loadPastJournals(user); // Call loadPastJournals with the user object
-});
+// Function to toggle the visibility of the calendar
+function toggleCalendar() {
+    var calendarContainer = document.getElementById("calendarContainer");
+    calendarContainer.classList.toggle("hidden");
+}
+
+// Function to initialize the calendar
+function initCalendar() {
+    flatpickr("#calendarContainer", {
+        mode: "single",
+        onChange: function(selectedDates, dateStr, instance) {
+            filterJournalsByDate(selectedDates[0]);
+        }
+    });
+}
+
+// Function to filter past journals by date
+function filterJournalsByDate(selectedDate) {
+    var journals = document.querySelectorAll('.journal-entry');
+    journals.forEach(function(journal) {
+        var journalDate = new Date(journal.dataset.timestamp);
+        if (journalDate.toDateString() === selectedDate.toDateString()) {
+            journal.style.display = 'block';
+        } else {
+            journal.style.display = 'none';
+        }
+    });
+}
 
 // Call the function to load past journals when the page loads
 window.onload = function() {
-    
+    // Load past journals
+    firebase.auth().onAuthStateChanged(function(user) {
+        loadPastJournals(user);
+    });
+
+    // Initialize calendar
+    initCalendar();
+
+    // Attach click event listener to the toggle calendar button
+    document.getElementById("toggleCalendarBtn").addEventListener("click", toggleCalendar);
 };
+
+
