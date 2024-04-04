@@ -1,16 +1,17 @@
 var currentUser;
+var currentUserID;
 
 //Function that calls everything needed for the main page  
 function doAll() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            currentUser = db.collection("users").doc(user.uid); //global
-            console.log(currentUser);
+            // currentUser = db.collection("users").doc(user.uid); //global
+            currentUserID = user.uid;
 
             // figure out what day of the week it is today
-            const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-            const d = new Date();
-            let day = weekday[d.getDay()];
+            // const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+            // const d = new Date();
+            // let day = weekday[d.getDay()];
 
             // the following functions are always called when someone is logged in
             // readQuote(day);
@@ -96,7 +97,8 @@ document.querySelector("#submit").addEventListener("click", function getTerm() {
 
 //will pop up a menu and blur the rest of the screen for custom term entry
 document.querySelector("#confirmBtn").addEventListener("click", function addCheckin() {
-    var checkInRef = db.collection("users").doc("yUzjMJJBe5QiHjjnDawR6NfVatW2").collection("checkIns");
+    console.log(currentUser);
+    var checkInRef = db.collection("users").doc(currentUserID).collection("checkIns");
     var hapValue = document.querySelector('input[name=hap-rating]:checked').value;
     var eneValue = document.querySelector('input[name=ene-rating]:checked').value;
     var exeValue = document.querySelector('input[name=exercise]:checked').value;
@@ -139,6 +141,10 @@ updateTime();
 
 const showDialogBtn = document.getElementById('customButtonButton');
 const favDialog = document.getElementById('favDialog');
+const hideDialogBtn = document.getElementById('closeDialog');
 
 showDialogBtn.addEventListener('click', () => favDialog.showModal());
+hideDialogBtn.addEventListener('click', () => favDialog.close());
+
+
 

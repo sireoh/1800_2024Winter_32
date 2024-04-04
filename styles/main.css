@@ -44,12 +44,16 @@
     background-size: cover;
 }
 
-
+* {
+    margin: 0;
+    padding: 0;
+}
 .container {
     height: 100vh;
     display: grid;
     grid-template-rows: 5em 10em auto min-content 5em;
     width: 100%;
+    overflow:hidden;
     grid-template-areas:
         'header'
         'clock'
@@ -65,10 +69,11 @@
     align-content: center;
     justify-content: center;
     font-family: 'Quicksand';
+    text-align: center;
 }
 
 #clock {
-    font-size:100px;
+    font-size:10vh;
     color:white;
     text-shadow:2px 1px gray;
 }
@@ -87,6 +92,9 @@
     grid-column:3;
 }
 
+#customButton{
+    text-align: center;
+}
 
 .material-symbols-outlined {
     font-variation-settings:
@@ -122,6 +130,7 @@
     display: grid;
     justify-content: center;
     align-content:center;
+
 }
 
 .buttonGroup {
@@ -382,24 +391,27 @@ dialog::backdrop {
 	justify-content: space-between;
 	padding: 0.4rem 0.8rem;
 	width: 100%;
+    height:min-content;
 }
 
 .rating-text p {
 	color: rgba(0, 0, 16, 0.8);
-	font-size: 1.3rem;
-	padding: 0.3rem;
+	font-size: 1.5vh;
+    font-weight: bold;
+	padding: 0;
+    margin: 0 0 0 0;
 }
 
 .rating {
 	background-color: #033F63;
 	padding: 0.4rem 0.4rem 0.1rem 0.4rem;
-	border-radius: 2.2rem;
+	border-radius: 0.8rem;
 }
 
 svg {
 	fill: rgb(242, 242, 242);
-	height: 3.6rem;
-	width: 3.6rem;
+	height: 3vh;
+	width: auto;
 	margin: 0.2rem;
 }
 
