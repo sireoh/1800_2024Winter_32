@@ -5,10 +5,20 @@
     padding-bottom: 10px;
 } */
 
-body{
+*{
     margin: 0;
     padding: 0;
 }
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    grid-template-rows: 5em auto 5em;
+    grid-template-columns: 100vw;
+}
+
+
 
 #populateShop {
     display: grid;
@@ -19,11 +29,11 @@ body{
 
 .hatTheme {
     text-decoration: none;
-    background-color: #fff4ed;
-    color: Tomato;
+    background-color: rgb(7,132,181);
+    color: white;
     padding: 1em 0 1em;
     border-radius: 0.5em;
-    box-shadow: 0 1vh #ddc09e;
+    box-shadow: 0 1vh  #033F63;
     font-size: 1.5em;
     border: none;
     margin: 2vh 2vw 2vh;
@@ -31,6 +41,6 @@ body{
 }
 
 .hatTheme:hover {
-    box-shadow: 0 5px #ddc09e;
+    box-shadow: 0 5px #022841;
 	transform: translateY(4px);
 }
