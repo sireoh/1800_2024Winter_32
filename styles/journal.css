@@ -1,4 +1,4 @@
-.container {
+/* .container {
   height: 85vh;
   width: 100vw;
   display: grid;
@@ -12,7 +12,7 @@
   overflow: hidden;
   background-image: url(../images/daysky.svg);
   background-repeat: no-repeat;
-}
+} */
 
 .container {
   height: 100vh;
@@ -76,10 +76,10 @@
 
 #submit {
   text-decoration: none;
-  background-color: #fff4ed;
-  color: rgb(7, 132, 181);
+  background-color: rgb(7, 132, 181);
+  color: white;
   border-radius: 0.5em;
-  box-shadow: 0 1vh #ddc09e;
+  box-shadow: 0 1vh #033F63;
   font-size: 1.5em;
   border: none;
   grid-area: submit;
@@ -91,10 +91,10 @@
 
 #clear {
   text-decoration: none;
-  background-color: #fff4ed;
-  color: rgb(7, 132, 181);
+  background-color: rgb(7, 132, 181);
+  color: white;
   border-radius: 0.5em;
-  box-shadow: 0 1vh #ddc09e;
+  box-shadow: 0 1vh #033F63;
   font-size: 1.5em;
   border: none;
   grid-area: clear;
@@ -106,10 +106,10 @@
 
 #past_journals {
   text-decoration: none;
-  background-color: #fff4ed;
-  color: rgb(7, 132, 181);
+  background-color: rgb(7, 132, 181);
+  color: white;
   border-radius: 0.5em;
-  box-shadow: 0 1vh #ddc09e;
+  box-shadow: 0 1vh #033F63;
   font-size: 0.7em;
   border: none;
   margin-top: 25px;
@@ -154,12 +154,12 @@
   width: 20%;
   height: 30px;
   margin: 20px;
-  margin-top: 50px;
+  margin-top: 50px; 
   text-decoration: none;
-  background-color: #fff4ed;
-  color: darkblue;
+  background-color: rgb(7, 132, 181);
+  color: white;
   border-radius: 0.5em;
-  box-shadow: 0 1vh #ddc09e;
+  box-shadow: 0 1vh #033F63;
   font-size: 1.5em;
   border: none;
 }
@@ -167,12 +167,24 @@
 #cancelButton {
   width: 20%;
   height: 30px;
-  margin: 20px;
+  margin-top: 50px;
   text-decoration: none;
-  background-color: #fff4ed;
-  color: darkblue;
+  background-color: rgb(7, 132, 181);
+  color: white;
   border-radius: 0.5em;
-  box-shadow: 0 1vh #ddc09e;
+  box-shadow: 0 1vh #033F63;
   font-size: 1.5em;
   border: none;
+  /* margin: 2vh 0 2vh; */
+  /* padding: 0.5vh; */
+}
+
+
+#confirmButton:hover,
+#cancelButton:hover,
+#past_journals:hover,
+#clear:hover,
+#submit:hover {
+  box-shadow: 0 5px #022841;
+  transform: translateY(4px);
 }

@@ -28,12 +28,11 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    
+
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <link rel="stylesheet" href="./styles/navfooter.css">
-    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/graphs.css">
     <script src="https://kit.fontawesome.com/439240f295.js" crossorigin="anonymous"></script>
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
@@ -44,34 +43,44 @@
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
-    <header id="navPlaceholder"></header>
+
 
     <!-- the body of your page goes here -->
     <div class="container">
-        <div id="buttons">
-            <button onclick="week()">WEEK</button>
-            <button onclick="month()">MONTH</button>
-            <button onclick="year()">YEAR</button>
+        <header id="navPlaceholder"></header>
+
+        <div id="content">
+            <div id="buttons">
+                <button onclick="week()">WEEK</button>
+                <button onclick="month()">MONTH</button>
+                <button onclick="year()">YEAR</button>
+            </div>
+            <div id="graph-area">
+                <canvas id="line-chart"></canvas>
+            </div>
+            <div id="icons">
+                <a href="#" onclick="showAlert()"><i class="fa-solid fa-dumbbell"></i></a>
+                <a href="#" onclick="showAlert()"><i class="fa-solid fa-utensils"></i></a>
+                <a href="#" onclick="showAlert()"><i class="fa-solid fa-bed"></i></a>
+                <a href="#" onclick="showAlert()"><i class="fa-solid fa-cloud-sun-rain"></i></a>
+            </div>
         </div>
-        <canvas id="line-chart"></canvas>
-        <div id="icons">
-            <a href="#" onclick="showAlert()"><i class="fa-solid fa-dumbbell"></i></a>
-            <a href="#" onclick="showAlert()"><i class="fa-solid fa-utensils"></i></a>
-            <a href="#" onclick="showAlert()"><i class="fa-solid fa-bed"></i></a>
-            <a href="#" onclick="showAlert()"><i class="fa-solid fa-cloud-sun-rain"></i></a>
-        </div>
+
+
+        <footer id="footerPlaceholder"></footer>
     </div>
 
     <!-- our own footer goes here-->
-    <footer id="footerPlaceholder"></footer>
+
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
-    <script src="./scripts/firebaseAPI_BBY32.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/graphs.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/firebaseAPI_BBY32.js"></script>
+    <script src="./scripts/graphs.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+
 </body>
 
 </html>
