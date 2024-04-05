@@ -8,7 +8,7 @@
   font-style: normal;
 }
 
-.containerMorning {
+/* .containerMorning {
     display: grid;
     height: 85vh;
     width: 100vw;
@@ -24,7 +24,7 @@
     /* background-image: url(/data/img/daysky.svg); */
     /* background-repeat: no-repeat; */
     /* background-size: cover; */
-}
+/* }
 
 .containerEvening {
     display: grid;
@@ -42,7 +42,7 @@
     background-image: url(/data/img/daysky.svg);
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */ 
 
 * {
     margin: 0;
@@ -52,7 +52,7 @@
     height: 100vh;
     display: grid;
     grid-template-rows: 5em 10em auto min-content 5em;
-    width: 100%;
+    width: 100vw;
     overflow:hidden;
     grid-template-areas:
         'header'

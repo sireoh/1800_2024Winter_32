@@ -14,6 +14,30 @@
   background-repeat: no-repeat;
 }
 
+.container {
+  height: 100vh;
+  display: grid;
+  background-color: lightblue;
+  grid-template-rows: 5em 10vh auto 10vh 5em;
+  grid-template-columns: 50vw 50vw;
+  width: 100vw;
+  overflow: hidden;
+  grid-template-areas:
+    "navheader navheader"
+    "header header1"
+    "body body"
+    "submit clear"
+    "navfooter navfooter";
+}
+
+#navPlaceholder {
+  grid-area: navheader;
+}
+
+#footerPlaceholder {
+  grid-area: navfooter;
+}
+
 #j1 {
   grid-area: header;
   margin-left: 5%;

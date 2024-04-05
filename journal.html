@@ -44,10 +44,10 @@
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
-    <header id="navPlaceholder"></header>
 
     <!-- the body of your page goes here -->
     <div class="container">
+        <header id="navPlaceholder"></header>
         <h1 id="j1">Write a Journal:</h1>
         <!-- Show past entries -->
         <a href="past_journals.html">
@@ -59,19 +59,22 @@
         <input id="submit" type="submit" onclick="writeJournal()" value="Submit" />
         <!-- Clear button to clear the input field -->
         <button id="clear">Clear</button>
+        <footer id="footerPlaceholder"></footer>
 
     </div>
+    
 
     <div id="customAlertModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <p id="modalMessage"></p>
         </div>
+        
     </div>
 
 
     <!-- our own footer goes here-->
-    <footer id="footerPlaceholder"></footer>
+    
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
