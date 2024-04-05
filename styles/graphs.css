@@ -1,27 +1,95 @@
-#buttons {
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: lightblue;
     display: grid;
+    grid-template-rows: 5em auto 5em;
+    grid-template-columns: 100vw;
+    grid-template-areas:
+        "navheader"
+        "content"
+        "navfooter";
+}
+
+
+#navPlaceholder {
+    grid-area: navheader;
+}
+
+
+
+#content {
+    height:auto;
+    grid-area: content;
+    display:grid;
+    grid-template-rows: 10em auto 10em;
+    grid-template-columns: 100vw;
+    grid-template-areas: 
+    "topButton"
+    "chart"
+    "bottomButton";
+}
+
+#footerPlaceholder {
+    grid-area: navfooter;
+}
+
+#graph-area {
+    grid-area: chart;
+    display:grid;
+    grid-template-rows: auto auto auto;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+#line-chart {
+    height: auto;
+    width: 100vw;
+    /* margin:0 auto; */
+}
+
+
+#buttons {
+    grid-area: topButton;
+    display: grid;
+    width:100vw;
+    height:5em;
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 1em;
 }
 
 #buttons button {
     text-decoration: none;
-    background-color: #fff4ed;
-    color: Tomato;
+    background-color: rgb(7,132,181);
+    color: white;
     padding: 2vh 0 2vh;
     border-radius: 0.5em;
-    box-shadow: 0 1vh #ddc09e;
+    box-shadow: 0 1vh  #033F63;
     font-size: 1.5em;
     border: none;
-    margin: 5vh 0 5vh;
+    margin-bottom: 5px;
 }
 
 #buttons button:hover {
-	box-shadow: 0 5px #ddc09e;
-	transform: translateY(4px);
+    box-shadow: 0 5px #022841;
+    transform: translateY(4px);
 }
 
 #icons {
-    margin-top: 10vh;
+    grid-area: bottomButton;
+    width:100vw;
+    /* margin-top: 10vh; */
+    margin-bottom:5vh;
+    padding-bottom: 1vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
@@ -29,14 +97,15 @@
 
 #icons i {
     font-size: 2em;
-    background-color: #fff4ed;
-    color: Tomato;
+    background-color: rgb(7,132,181);
+    color: white;
     padding: 2vh 2vw 2vh;
     border-radius: 0.5em;
-    box-shadow: 0 1vh #ddc09e;
+    box-shadow: 0 1vh  #033F63;
+    margin-bottom:5px;
 }
 
 #icons i:hover {
-    box-shadow: 0 5px #ddc09e;
-	transform: translateY(4px);
+    box-shadow: 0 5px  #033F63;
+    transform: translateY(4px);
 }

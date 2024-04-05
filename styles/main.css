@@ -519,6 +519,6 @@ input[class="super-sad-energy"]:focus + svg {
 }
 
 #submitbutton button:hover, #customButton button:hover {
-    box-shadow: 0 5px #ddc09e;
+    box-shadow: 0 5px #022841;
 	transform: translateY(4px);
 }
