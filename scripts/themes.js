@@ -151,7 +151,8 @@
 //     });
 //     console.log("theme mock data has been added.");
 // }
-var startingMoney = 100;
+//starting money is taken from local storage, if there is no local storage data then starting money is set to 100.
+var startingMoney = parseInt(localStorage.getItem('startingMoney')) || 100;
 var amtOfHats = 30;
 var htmlStr = "";
 
@@ -205,13 +206,26 @@ function populateThemes() {
 function getCurrentAmt() {
     return startingMoney;
 }
-document.getElementById("currentAmtOfMoney").innerHTML = getCurrentAmt();
+
+function updateCurrentAmtUI() {
+    document.getElementById("currentAmtOfMoney").innerHTML = getCurrentAmt();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    populateThemes();
+    updateCurrentAmtUI();
+});
+
 
 function purchaseHat(price, hatType) {
     if (startingMoney >= price) {
         alert("You have purchaed a " + hatType + " hat for the price of: " + price);
         startingMoney -= price;
-        document.getElementById("currentAmtOfMoney").innerHTML = getCurrentAmt();
+        updateCurrentAmtUI();
+        
+        //updates local storage data for startingMoney variable
+        localStorage.setItem('startingMoney', startingMoney)
+        // document.getElementById("currentAmtOfMoney").innerHTML = getCurrentAmt();
     } else {
         alert("You do not have enough rewards points, do more check in to collect more !!");
     }
