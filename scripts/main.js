@@ -83,11 +83,20 @@ if (navigator.geolocation) {
 // if (date.getHours()) {
 
 // }
+window.onload = function getTermLoad() {
+    const hapValue = "hap" + document.querySelector('input[name=hap-rating]:checked').value;
+    const eneValue = "ene" + document.querySelector('input[name=ene-rating]:checked').value;
+    db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("term1").get("term")
+        .then(doc => {
+            moodterm = doc.data().term;
+            document.getElementById("jsMoodterm").innerHTML = moodterm;
+        });
+}
 
 //choose which class/id will be clicked to query the database for the term.
-document.querySelector("#submit").addEventListener("click", function getTerm() {
-    const hapValue = document.querySelector('input[name=hap-rating]:checked').value;
-    const eneValue = document.querySelector('input[name=ene-rating]:checked').value;
+document.querySelector("#sliders").addEventListener("click", function getTerm() {
+    const hapValue = "hap" + document.querySelector('input[name=hap-rating]:checked').value;
+    const eneValue = "ene" + document.querySelector('input[name=ene-rating]:checked').value;
     db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("term1").get("term")
         .then(doc => {
             moodterm = doc.data().term;
@@ -104,8 +113,13 @@ document.querySelector("#confirmBtn").addEventListener("click", function addChec
     var exeValue = document.querySelector('input[name=exercise]:checked').value;
     var eatValue = document.querySelector('input[name=eat]:checked').value;
     var sleepValue = document.querySelector('input[name=sleep]:checked').value;
+    var checkDate = new Date();
+    const offset = checkDate.getTimezoneOffset()
+    checkDate = new Date(checkDate.getTime() - (offset * 60 * 1000))
+    checkDate = checkDate.toISOString().split('T')[0]
+    console.log(checkDate);
 
-    checkInRef.add({
+    checkInRef.doc(checkDate).set({
         moodTerm: moodterm,
         happyValue: hapValue,
         energyValue: eneValue,
