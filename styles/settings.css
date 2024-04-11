@@ -1,5 +1,6 @@
 .container {
     display: grid;
+    height: 85.1vh;
     justify-content: unset;
     justify-items: center
 }
@@ -29,4 +30,9 @@ ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style: none;
+}
+
+#log{
+    margin: 30%;
+    background-color: tomato;
 }
