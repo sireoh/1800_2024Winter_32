@@ -208,7 +208,7 @@
 
 dialog::backdrop {
     backdrop-filter: blur(4px);
-  }
+}
 
 
 
@@ -431,10 +431,51 @@ input[type="radio"] {
 	opacity: 0;
 }
 
+.buttonGroup {
+    margin-bottom: 1em;
+    justify-content: center;
+}
+
+#closeDialog {
+    cursor: pointer;
+    font-size: xx-large;
+}
+
+dialog {
+    font-size: large;
+}
+
+#confirmBtn {
+    
+}
+
 #favDialog input[type="radio"] {
 	position:static;
     opacity: 100;
+    
+    display: inline-block;
+    width: 80%;
+    margin-top: 1.2em;
+    padding: 1em;
+    max-width: 220px;
+    font-size: .9em;
+    color: #D42D78;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .15em;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 5em;
+    box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.3);
+    transition: 
+      color 0.6s, 
+      box-shadow 0.3s, 
+      transform 0.3s;
+    cursor: pointer;
 }
+
+
 
 input[type="radio"] + svg {
 	-webkit-transition: all 0.2s;
@@ -505,7 +546,7 @@ input[class="super-sad-energy"]:focus + svg {
 	fill: rgb(239, 42, 16);
 }
 
-#submitbutton button, #customButton button{
+#submitbutton button, #customButton button {
     text-decoration: none;
     background-color: rgb(7,132,181);
     color: white;
@@ -519,6 +560,7 @@ input[class="super-sad-energy"]:focus + svg {
 }
 
 #submitbutton button:hover, #customButton button:hover {
-    box-shadow: 0 5px #ddc09e;
+    box-shadow: 0 5px #033F63;
 	transform: translateY(4px);
 }
+

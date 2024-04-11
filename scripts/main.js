@@ -1,5 +1,11 @@
 var currentUser;
 var currentUserID;
+const submitCheckArea = document.getElementById("customButton");
+
+var checkDate = new Date();
+    const offset = checkDate.getTimezoneOffset()
+    checkDate = new Date(checkDate.getTime() - (offset * 60 * 1000))
+    checkDate = checkDate.toISOString().split('T')[0]
 
 //Function that calls everything needed for the main page  
 function doAll() {
@@ -83,11 +89,20 @@ if (navigator.geolocation) {
 // if (date.getHours()) {
 
 // }
+window.onload = function getTermLoad() {
+    const hapValue = "hap" + document.querySelector('input[name=hap-rating]:checked').value;
+    const eneValue = "ene" + document.querySelector('input[name=ene-rating]:checked').value;
+    db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("term1").get("term")
+        .then(doc => {
+            moodterm = doc.data().term;
+            document.getElementById("jsMoodterm").innerHTML = moodterm;
+        });
+}
 
 //choose which class/id will be clicked to query the database for the term.
-document.querySelector("#submit").addEventListener("click", function getTerm() {
-    const hapValue = document.querySelector('input[name=hap-rating]:checked').value;
-    const eneValue = document.querySelector('input[name=ene-rating]:checked').value;
+document.querySelector("#sliders").addEventListener("click", function getTerm() {
+    const hapValue = "hap" + document.querySelector('input[name=hap-rating]:checked').value;
+    const eneValue = "ene" + document.querySelector('input[name=ene-rating]:checked').value;
     db.collection("moodTerms").doc(hapValue).collection(eneValue).doc("term1").get("term")
         .then(doc => {
             moodterm = doc.data().term;
@@ -95,7 +110,7 @@ document.querySelector("#submit").addEventListener("click", function getTerm() {
         });
 });
 
-//will pop up a menu and blur the rest of the screen for custom term entry
+//send the check-in data to firestore named with the date (YYYY-MM-DD)
 document.querySelector("#confirmBtn").addEventListener("click", function addCheckin() {
     console.log(currentUser);
     var checkInRef = db.collection("users").doc(currentUserID).collection("checkIns");
@@ -104,8 +119,10 @@ document.querySelector("#confirmBtn").addEventListener("click", function addChec
     var exeValue = document.querySelector('input[name=exercise]:checked').value;
     var eatValue = document.querySelector('input[name=eat]:checked').value;
     var sleepValue = document.querySelector('input[name=sleep]:checked').value;
+    
+    console.log(checkDate);
 
-    checkInRef.add({
+    checkInRef.doc(checkDate).set({
         moodTerm: moodterm,
         happyValue: hapValue,
         energyValue: eneValue,
@@ -119,6 +136,19 @@ document.querySelector("#confirmBtn").addEventListener("click", function addChec
     })
 });
 
+
+// var docRef = db.collection("users").doc(currentUserID).collection("checkIns").doc("testing");
+// console.log(checkDate);
+// docRef.get().then((doc) => {
+    // if (doc.exists) {
+        // console.log("Document data:", doc.data());
+    // } else {
+        // /doc.data() will be undefined in this case
+        // console.log("No such document!");
+    // }
+// }).catch((error) => {
+    // console.log("Error getting document:", error);
+// });
 
 const timeElement = document.getElementById("clock");
 
@@ -134,8 +164,8 @@ function updateTime() {
     timeElement.innerText = clockStr;
 
     // Set a timeout for one minute
-    setTimeout(updateTime, 60000);
-}
+    setTimeout(updateTime, 6000);
+};
 
 updateTime();
 
@@ -145,6 +175,3 @@ const hideDialogBtn = document.getElementById('closeDialog');
 
 showDialogBtn.addEventListener('click', () => favDialog.showModal());
 hideDialogBtn.addEventListener('click', () => favDialog.close());
-
-
-
