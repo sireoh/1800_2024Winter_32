@@ -106,11 +106,12 @@
 
 #past_journals {
   text-decoration: none;
+  height: 50%;
   background-color: rgb(7, 132, 181);
   color: white;
   border-radius: 0.5em;
   box-shadow: 0 1vh #033F63;
-  font-size: 0.7em;
+  font-size: 0.6em;
   border: none;
   margin-top: 25px;
 }
