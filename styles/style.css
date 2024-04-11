@@ -13,3 +13,16 @@
     justify-content: center;
     align-content: center;
 }
+
+.btn{
+    margin: 20px;
+    margin-top: 50px; 
+    text-decoration: none;
+    background-color: rgb(7, 132, 181);
+    color: white;
+    border-radius: 0.5em;
+    box-shadow: 0 1vh #033F63;
+    font-size: 2em;
+    padding: 2%;
+    border: none;
+}
