@@ -60,3 +60,16 @@ function saveUserInfo() {
 
 //call the function to run it 
 populateUserInfo();
+
+function logout() {
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        console.log("User signed out successfully");
+        // Redirect to the login page
+        window.location.href = "login.html";
+    }).catch((error) => {
+        // An error happened.
+        console.error("Error signing out:", error);
+    });
+}
+
