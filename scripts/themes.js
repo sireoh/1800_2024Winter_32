@@ -258,6 +258,8 @@ function showConfirmation(message, callback) {
     showAlert(message);
     document.getElementById("modalMessage").innerHTML += "<br><button id='confirmButton'>Yes</button><button id='cancelButton'>No</button>";
     document.getElementById("confirmButton").addEventListener("click", function () {
+        showConfirmation("Hello world");
+        document.getElementById("modalMessage").innerHTML = "Hat has been set successfully.<br/><button id='cancelButton' onClick='closeModal()'>Ok</button>";
         callback(true);
         closeModal();
     });
@@ -269,8 +271,36 @@ function showConfirmation(message, callback) {
 
 // Modify existing functions to use custom modals
 function writeJournal(price, hatType) {
+    var hatName = ""; 
     showAlert("You cannot submit an empty journal entry.");
-    showConfirmation(`Would you like to select ${hatType}, for the price of ${price}?`, function (result) {
+    switch (hatType) {
+        case "fa-solid fa-hat-wizard":
+            hatName = "Wizard Cap";
+            break;
+        case "fa-solid fa-hat-cowboy-side":
+            hatName = "Texas Cap";
+            break;
+        case "fa-solid fa-hat-cowboy":
+            hatName = "Cowboy Headcover";
+            break;
+        case "fa-brands fa-pied-piper-hat":
+            hatName = "Pied Piper Hat";
+            break;
+        case "fa-solid fa-helmet-safety":
+            hatName = "Safety Helmet";
+            break;
+        case "fa-solid fa-graduation-cap":
+            hatName = "Graduation Cap";
+            break;
+        case "fa-brands fa-redhat":
+            hatName = "Red Cap";
+            break;
+        default:
+            console.log("Error");
+            break;
+    }
+
+    showConfirmation(`Would you like to select ${hatName}, for the price of ${price}?`, function (result) {
         if (result) {
             var user = firebase.auth().currentUser;
             if (user) {
