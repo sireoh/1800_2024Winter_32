@@ -5,6 +5,11 @@
     padding-bottom: 10px;
 } */
 
+* {
+  font-family: "Short Stack";
+  font-weight: bold;
+}
+
 *{
     margin: 0;
     padding: 0;

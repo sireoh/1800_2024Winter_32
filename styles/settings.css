@@ -1,3 +1,8 @@
+* {
+    font-family: "Short Stack";
+    font-weight: bold;
+}
+
 .container {
     display: grid;
     height: 85.1vh;
@@ -35,4 +40,13 @@ ul {
 #log{
     margin: 30%;
     background-color: tomato;
+    box-shadow: 0 1vh  rgb(170, 56, 36);
+}
+
+input {
+    width: 60vw;
+    height: 1.8vh;
+    border: 0.25em solid Tomato;
+    border-radius: 0.6em;
+    resize: none;
 }
