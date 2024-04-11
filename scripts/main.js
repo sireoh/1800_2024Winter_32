@@ -1,5 +1,11 @@
 var currentUser;
 var currentUserID;
+const submitCheckArea = document.getElementById("customButton");
+
+var checkDate = new Date();
+    const offset = checkDate.getTimezoneOffset()
+    checkDate = new Date(checkDate.getTime() - (offset * 60 * 1000))
+    checkDate = checkDate.toISOString().split('T')[0]
 
 //Function that calls everything needed for the main page  
 function doAll() {
@@ -104,7 +110,7 @@ document.querySelector("#sliders").addEventListener("click", function getTerm() 
         });
 });
 
-//will pop up a menu and blur the rest of the screen for custom term entry
+//send the check-in data to firestore named with the date (YYYY-MM-DD)
 document.querySelector("#confirmBtn").addEventListener("click", function addCheckin() {
     console.log(currentUser);
     var checkInRef = db.collection("users").doc(currentUserID).collection("checkIns");
@@ -113,10 +119,7 @@ document.querySelector("#confirmBtn").addEventListener("click", function addChec
     var exeValue = document.querySelector('input[name=exercise]:checked').value;
     var eatValue = document.querySelector('input[name=eat]:checked').value;
     var sleepValue = document.querySelector('input[name=sleep]:checked').value;
-    var checkDate = new Date();
-    const offset = checkDate.getTimezoneOffset()
-    checkDate = new Date(checkDate.getTime() - (offset * 60 * 1000))
-    checkDate = checkDate.toISOString().split('T')[0]
+    
     console.log(checkDate);
 
     checkInRef.doc(checkDate).set({
@@ -134,6 +137,19 @@ document.querySelector("#confirmBtn").addEventListener("click", function addChec
 });
 
 
+// var docRef = db.collection("users").doc(currentUserID).collection("checkIns").doc("testing");
+// console.log(checkDate);
+// docRef.get().then((doc) => {
+    // if (doc.exists) {
+        // console.log("Document data:", doc.data());
+    // } else {
+        // /doc.data() will be undefined in this case
+        // console.log("No such document!");
+    // }
+// }).catch((error) => {
+    // console.log("Error getting document:", error);
+// });
+
 const timeElement = document.getElementById("clock");
 
 function updateTime() {
@@ -148,8 +164,8 @@ function updateTime() {
     timeElement.innerText = clockStr;
 
     // Set a timeout for one minute
-    setTimeout(updateTime, 60000);
-}
+    setTimeout(updateTime, 6000);
+};
 
 updateTime();
 
@@ -159,6 +175,3 @@ const hideDialogBtn = document.getElementById('closeDialog');
 
 showDialogBtn.addEventListener('click', () => favDialog.showModal());
 hideDialogBtn.addEventListener('click', () => favDialog.close());
-
-
-
