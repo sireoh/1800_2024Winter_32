@@ -7,7 +7,7 @@ function loadSkeleton() {
     `
     <a href="main.html"><i class="fa-solid fa-home"></i></a>
     <a href="main.html">Mindful <i class="fa-solid fa-rainbow"></i> Minute</a>
-    <span id="currentAmtOfMoney"></span>
+    <span style="color:white;" id="currentAmtOfMoney"></span>
     <a href="themes.html"><i class="fa-solid fa-coins"></i></a>
     `;
     document.getElementById("footerPlaceholder").innerHTML =

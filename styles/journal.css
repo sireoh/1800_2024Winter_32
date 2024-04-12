@@ -14,6 +14,11 @@
   background-repeat: no-repeat;
 } */
 
+* {
+  font-family: "Short Stack";
+  font-weight: bold;
+}
+
 .container {
   height: 100vh;
   display: grid;
@@ -106,11 +111,12 @@
 
 #past_journals {
   text-decoration: none;
+  height: 50%;
   background-color: rgb(7, 132, 181);
   color: white;
   border-radius: 0.5em;
   box-shadow: 0 1vh #033F63;
-  font-size: 0.7em;
+  font-size: 0.6em;
   border: none;
   margin-top: 25px;
 }
@@ -131,6 +137,7 @@
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
+  margin-top: 30vh;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;

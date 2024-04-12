@@ -145,6 +145,154 @@ async function fetchYearMockData() {
     }
   }
 
+  /**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~Excercise~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+  async function excercise() {
+    let existingChart = Chart.getChart("line-chart");
+    if (existingChart) {
+      existingChart.destroy();
+    }
+    
+    try {
+      const mockData = await fetchWeekMockData();
+      
+      new Chart(document.getElementById("line-chart"), {
+        type: 'bar',
+        data: {
+          labels: ["mon", "tues", "wed", "thurs", "fri", "sat", "sun"],
+          datasets: [{
+            data: mockData, // Use fetched mock data here
+            label: "excercise",
+            borderColor: "#3cba9f",
+            fill: false
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: ''
+          }
+        }
+      });
+    } catch (error) {
+      console.error("Error rendering chart:", error);
+    }
+  }
+
+    /**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~Food~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+async function food() {
+  let existingChart = Chart.getChart("line-chart");
+  if (existingChart) {
+    existingChart.destroy();
+  }
+  
+  try {
+    const mockData = await fetchWeekMockData();
+    
+    new Chart(document.getElementById("line-chart"), {
+      type: 'bar',
+      data: {
+        labels: ["mon", "tues", "wed", "thurs", "fri", "sat", "sun"],
+        datasets: [{
+          data: mockData, // Use fetched mock data here
+          label: "food",
+          borderColor: "#3cba9f",
+          fill: false
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: ''
+        }
+      }
+    });
+  } catch (error) {
+    console.error("Error rendering chart:", error);
+  }
+}
+
+  /**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~Sleep~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+async function sleep() {
+  let existingChart = Chart.getChart("line-chart");
+  if (existingChart) {
+    existingChart.destroy();
+  }
+  
+  try {
+    const mockData = await fetchWeekMockData();
+    
+    new Chart(document.getElementById("line-chart"), {
+      type: 'bar',
+      data: {
+        labels: ["mon", "tues", "wed", "thurs", "fri", "sat", "sun"],
+        datasets: [{
+          data: mockData, // Use fetched mock data here
+          label: "sleep",
+          borderColor: "#3cba9f",
+          fill: false
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: ''
+        }
+      }
+    });
+  } catch (error) {
+    console.error("Error rendering chart:", error);
+  }
+}
+
+  /**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~Excercise~~~~~~~~~~~~~~~~~~~
+* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+async function weather() {
+  let existingChart = Chart.getChart("line-chart");
+  if (existingChart) {
+    existingChart.destroy();
+  }
+  
+  try {
+    const mockData = await fetchWeekMockData();
+    
+    new Chart(document.getElementById("line-chart"), {
+      type: 'bar',
+      data: {
+        labels: ["mon", "tues", "wed", "thurs", "fri", "sat", "sun"],
+        datasets: [{
+          data: mockData, // Use fetched mock data here
+          label: "weather",
+          borderColor: "#3cba9f",
+          fill: false
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: ''
+        }
+      }
+    });
+  } catch (error) {
+    console.error("Error rendering chart:", error);
+  }
+}
+
 
   // function month() {
 //     let existingChart = Chart.getChart("line-chart");

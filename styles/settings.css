@@ -1,5 +1,11 @@
+* {
+    font-family: "Short Stack";
+    font-weight: bold;
+}
+
 .container {
     display: grid;
+    height: 85.1vh;
     justify-content: unset;
     justify-items: center
 }
@@ -10,23 +16,37 @@ fieldset {
 
 button {
     text-decoration: none;
-    background-color: #fff4ed;
-    color: Tomato;
-    padding: 1vh 3vw 1vh;
+    background-color: rgb(7,132,181);
+    color: white;
+    padding: 1vh 2vw 1vh;
     border-radius: 0.5em;
-    box-shadow: 0 1vh #ddc09e;
+    box-shadow: 0 1vh  #033F63;
     font-size: 1.5em;
     border: none;
-    margin: 5vh 0 5vh;
+    margin-bottom: 5px;
 }
 
 button:hover {
-	box-shadow: 0 5px #ddc09e;
-	transform: translateY(4px);
+	box-shadow: 0 5px #022841;
+    transform: translateY(4px);
 }
 
 ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style: none;
+}
+
+#log{
+    margin: 30%;
+    background-color: tomato;
+    box-shadow: 0 1vh  rgb(170, 56, 36);
+}
+
+input {
+    width: 60vw;
+    height: 1.8vh;
+    border: 0.25em solid Tomato;
+    border-radius: 0.6em;
+    resize: none;
 }

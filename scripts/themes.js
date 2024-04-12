@@ -193,7 +193,7 @@ function populateThemes() {
     for(i = 1; i <= amtOfHats; i++) {
         var hat = new Hat(i, genRandomHat(), genRandomPrice());
         htmlStr += `
-        <button id="hatTheme${hat.hatID}" class="hatTheme" onClick="purchaseHat(${hat.price}, '${hat.hatType}')">
+        <button id="hatTheme${hat.hatID}" class="hatTheme" onClick="writeJournal(${hat.price}, '${hat.hatType}')">
             <i class="${hat.hatType}"></i><br/>
             Hat ${hat.hatID}<br/>
             $${hat.price}
@@ -217,17 +217,149 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function purchaseHat(price, hatType) {
-    if (startingMoney >= price) {
-        alert("You have purchaed a " + hatType + " hat for the price of: " + price);
-        startingMoney -= price;
-        updateCurrentAmtUI();
+// function purchaseHat(price, hatType) {
+    
+
+    // if (startingMoney >= price) {
+    //     alert("You have purchaed a " + hatType + " hat for the price of: " + price);
+    //     startingMoney -= price;
+    //     updateCurrentAmtUI();
         
-        //updates local storage data for startingMoney variable
-        localStorage.setItem('startingMoney', startingMoney)
-        // document.getElementById("currentAmtOfMoney").innerHTML = getCurrentAmt();
-    } else {
-        alert("You do not have enough rewards points, do more check in to collect more !!");
+    //     //updates local storage data for startingMoney variable
+    //     localStorage.setItem('startingMoney', startingMoney)
+    //     // document.getElementById("currentAmtOfMoney").innerHTML = getCurrentAmt();
+    // } else {
+    //     alert("You do not have enough rewards points, do more check in to collect more !!");
+    // }
+// }
+populateThemes();
+
+
+
+
+/** Journal Functions */
+
+// Function to display custom alert modal
+function showAlert(message) {
+    var modal = document.getElementById("customAlertModal");
+    var modalMessage = document.getElementById("modalMessage");
+    modal.style.display = "block";
+    modalMessage.innerText = message;
+}
+
+// Function to hide custom alert modal
+function closeModal() {
+    var modal = document.getElementById("customAlertModal");
+    modal.style.display = "none";
+}
+
+// Function to confirm action using custom modal
+function showConfirmation(message, callback) {
+    showAlert(message);
+    document.getElementById("modalMessage").innerHTML += "<br><button id='confirmButton'>Yes</button><button id='cancelButton'>No</button>";
+    document.getElementById("confirmButton").addEventListener("click", function () {
+        showConfirmation("Hello world");
+        document.getElementById("modalMessage").innerHTML = "Hat has been set successfully.<br/><button id='cancelButton' onClick='closeModal()'>Ok</button>";
+        callback(true);
+        closeModal();
+    });
+    document.getElementById("cancelButton").addEventListener("click", function () {
+        callback(false);
+        closeModal();
+    });
+}
+
+// Modify existing functions to use custom modals
+function writeJournal(price, hatType) {
+    var hatName = ""; 
+    showAlert("You cannot submit an empty journal entry.");
+    switch (hatType) {
+        case "fa-solid fa-hat-wizard":
+            hatName = "Wizard Cap";
+            break;
+        case "fa-solid fa-hat-cowboy-side":
+            hatName = "Texas Cap";
+            break;
+        case "fa-solid fa-hat-cowboy":
+            hatName = "Cowboy Headcover";
+            break;
+        case "fa-brands fa-pied-piper-hat":
+            hatName = "Pied Piper Hat";
+            break;
+        case "fa-solid fa-helmet-safety":
+            hatName = "Safety Helmet";
+            break;
+        case "fa-solid fa-graduation-cap":
+            hatName = "Graduation Cap";
+            break;
+        case "fa-brands fa-redhat":
+            hatName = "Red Cap";
+            break;
+        default:
+            console.log("Error");
+            break;
+    }
+
+    showConfirmation(`Would you like to select ${hatName}, for the price of ${price}?`, function (result) {
+        if (result) {
+            var user = firebase.auth().currentUser;
+            if (user) {
+                var currentUser = db.collection("users").doc(user.uid);
+                var userID = user.uid;
+
+                db.collection("journals").add({
+                    userID: userID,
+                    description: journalEntry,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                }).then(() => {
+                    window.location.href = "thanks.html"; // Redirect to the thanks page
+                });
+            } else {
+                console.log("No user is signed in");
+            }
+        }
+    });
+}
+
+// Function to clear the input field with confirmation
+function clearInputField() {
+    // Display a confirmation dialog
+    showConfirmation("Are you sure you want to clear the input field?", function (result) {
+        if (result) {
+            document.getElementById("description").value = ""; // Clear the textarea value
+        }
+    });
+}
+
+// // Event listener for the Clear button
+// document.getElementById("clear").addEventListener("click", clearInputField);
+
+
+// Event listener for all anchors that navigate to other pages
+var buttons = document.querySelectorAll('a');
+buttons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        var journalEntry = document.getElementById("description").value.trim();
+        if (journalEntry !== "") {
+            var confirmation = confirm("You have unsaved changes. Are you sure you want to leave this page?");
+            if (!confirmation) {
+                event.preventDefault(); // Prevent the default action (navigation to another page)
+            }
+        }
+    });
+}); 
+// Close modal when clicking on the close button
+var closeButtons = document.querySelectorAll('.close');
+closeButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        closeModal();
+    });
+});
+
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+    var modal = document.getElementById("customAlertModal");
+    if (event.target == modal) {
+        closeModal();
     }
 }
-populateThemes();
